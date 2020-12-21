@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  db_instance:
+    image: docker-registry.cdweb.biz/datascience/docker-library-python:3.6
+
+  db_structure:
+    image: docker-registry.cdweb.biz/sre/docker-mongo-database-creator:1.0.4
+    environment:
+      MODEL_DIRECTORY: /workspace/db/model
+    env_file:
+      - database-configuration
+      - ../.env

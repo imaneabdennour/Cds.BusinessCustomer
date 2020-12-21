@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  db_instance:
+    image: docker-registry.cdweb.biz/sre/docker-mssql-create-database:1.0.0
+    environment:
+      SQLCMD_DELAY: 90
+    env_file:
+      - ../.env
+      - database-configuration
+
+  db_structure:
+    image: docker-registry.cdweb.biz/sre/docker-mssql-legacy-loader:1.0.2
+    environment:
+      SYSTEM_ACCESSTOKEN: ${SYSTEM_ACCESSTOKEN}
+    env_file:
+      - ../.env
+      - database-configuration
+    user: root

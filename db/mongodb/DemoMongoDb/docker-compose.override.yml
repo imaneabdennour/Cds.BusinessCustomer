@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  db_structure:
+    volumes:
+          - type: bind
+            source: .
+            target: /workspace/db
+    env_file:
+      - ../.env
+      - database-configuration
+      - database-strictness-configuration
+    environment:
+      MODEL_DIRECTORY: /workspace/db/model

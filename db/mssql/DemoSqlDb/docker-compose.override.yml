@@ -1,0 +1,8 @@
+version: "3.3"
+
+services:
+  db_structure:
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace/db
