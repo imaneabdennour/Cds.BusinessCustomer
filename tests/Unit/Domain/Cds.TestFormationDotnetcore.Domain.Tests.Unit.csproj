@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <ProjectGuid>{2074C5D5-9E5F-4CE1-BBCE-93AB55EC6C84}</ProjectGuid>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup Label="Project References">
+        <ProjectReference Include="..\..\..\src\Api\Cds.TestFormationDotnetcore.Api.csproj" />
+        <ProjectReference Include="..\..\..\src\Domain\Cds.TestFormationDotnetcore.Domain.csproj" />
+        <ProjectReference Include="..\..\..\src\Infrastructure\Cds.TestFormationDotnetcore.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

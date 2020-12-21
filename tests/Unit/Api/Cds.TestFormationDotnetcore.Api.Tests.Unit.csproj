@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <ProjectGuid>{EB1E14C4-8E5E-45CD-BC43-FEE91039CCD8}</ProjectGuid>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\Api\Cds.TestFormationDotnetcore.Api.csproj" />
+    </ItemGroup>
+
+</Project>
