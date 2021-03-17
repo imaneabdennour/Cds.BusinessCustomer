@@ -2,20 +2,16 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 
 using Cds.Foundation.Data;
-using Cds.TestFormationDotnetcore.Domain.ItemAggregate;
-using Cds.TestFormationDotnetcore.Domain.ItemAggregate.Abstractions;
-using Cds.TestFormationDotnetcore.Infrastructure.Data.Items;
-using Cds.TestFormationDotnetcore.Infrastructure.ItemRepository.Abstractions;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using MongoDB.Driver;
-using Cds.Foundation.Data.Mongo;
-using System.Data;
-using Microsoft.Data.SqlClient;
+using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
+using Cds.TestFormationDotnetcore.Infrastructure;
+using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cds.TestFormationDotnetcore.Api.Bootstrap
 {
@@ -54,9 +50,9 @@ namespace Cds.TestFormationDotnetcore.Api.Bootstrap
 
             services
                 .AddHealthChecks()
-                .AddCheck("Default", () => HealthCheckResult.Healthy("OK"))
-                .AddSqlServer("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
-                .AddMongoDb("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
+              //  .AddCheck("Default", () => HealthCheckResult.Healthy("OK"))
+                //.AddSqlServer("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
+                //.AddMongoDb("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
                 // [You can add more checks here...]
             ;
 
@@ -86,29 +82,37 @@ namespace Cds.TestFormationDotnetcore.Api.Bootstrap
                     // Registers services to generate OpenApi Specifications (via third party library).
                     .AddApiExplorer()
                     // Registers Cdiscount's services to handle field selection, paging, etc.
-                    .AddUnifiedRestApi();
+                    .AddUnifiedRestApi();          
+
             // Registers domain handler.
-            services.AddScoped<ItemHandler>();
+            //services.AddScoped<ItemHandler>();
 
             if (_environment.IsDevelopment())
             {
-                var inMemoryRepository = new InMemoryRepository();
-
-                services
-                    .AddScoped<IItemRepository>(f => inMemoryRepository)
-                    .AddScoped<IItemReadRepository>(f => inMemoryRepository);
+                //var inMemoryRepository = new InMemoryRepository();
+                
+                //services
+                //    .AddScoped<IItemRepository>(f => inMemoryRepository)
+                //    .AddScoped<IItemReadRepository>(f => inMemoryRepository);
             }
             else
             {
-                var connectionString = _configuration.GetConnectionString("DefaultConnection");
-                services
-                    .AddSingleton(new MongoDbSettings { ConnectionString = connectionString })
-                    .AddSingleton<IMongoDbContext, MongoDbContext>()
-                    .AddSingleton<IMongoClient>(new MongoClient(connectionString))
-                    .AddSingleton<IItemRepository, MongoRepository>()
-                    .AddSingleton<IItemReadRepository, MongoRepository>();
+                //var connectionString = _configuration.GetConnectionString("DefaultConnection");
+                //services
+                //    .AddSingleton(new MongoDbSettings { ConnectionString = connectionString })
+                //    .AddSingleton<IMongoDbContext, MongoDbContext>()
+                //    .AddSingleton<IMongoClient>(new MongoClient(connectionString))
+                //    .AddSingleton<IItemReadRepository, MongoRepository>();
             }
             // [You can add your own application services here...]
+
+            // DI : 
+            services.AddScoped<ICartegieApi, CartegieApi>();
+            // Registers api handler.
+            services.AddScoped<IParametersHandler, ParametersHandler>();
+            // Injection of configuration :
+            services.AddSingleton(_configuration.GetSection("CartegieConfiguration").Get<CartegieConfiguration>());
+
         }
 
         /// <summary>

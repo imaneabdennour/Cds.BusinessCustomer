@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\src\Api\Cds.TestFormationDotnetcore.Api.csproj" />
+      <ProjectReference Include="..\..\..\src\Api\Cds.BusinessCustomer.Api.csproj" />
     </ItemGroup>
 
 </Project>

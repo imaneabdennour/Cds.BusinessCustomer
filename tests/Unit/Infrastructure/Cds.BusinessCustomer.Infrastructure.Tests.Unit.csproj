@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <ProjectGuid>{A85F9060-C715-4B08-B529-7BD0FB4ECB34}</ProjectGuid>
+        <IsPackable>false</IsPackable>
+        <RootNamespace>Cds.BusinessCustomer.Infrastructure.Tests.Unit</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup Label="Package References">
+        <PackageReference Include="Moq.Dapper" Version="1.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\Infrastructure\Cds.BusinessCustomer.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

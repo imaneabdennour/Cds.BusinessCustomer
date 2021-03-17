@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>netcoreapp3.1</TargetFramework>
+	<ProjectGuid>{9A413F44-9E9C-475D-BECF-8F365EDB0A35}</ProjectGuid>
+	<IsPackable>false</IsPackable>
+	<AssemblyName>Cds.BusinessCustomer.Tests.ConsumerPact</AssemblyName>
+	<RootNamespace>Cds.BusinessCustomer.Tests.ConsumerPact</RootNamespace>
+	<AssemblyOriginatorKeyFile>C:\Users\imane.abdennour\Desktop\test-formation-dotnetcore\test-formation-dotnetcore\build\Key.snk</AssemblyOriginatorKeyFile>
+	<SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cds.Foundation.Test.Pact" Version="2.0.2" />
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="PactNet.Linux.x64" Version="2.5.3" />
+    <PackageReference Include="PactNet.Windows" Version="2.5.3" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\..\..\Architecture-v4\Cds.BusinessCustomer.Api\Cds.BusinessCustomer.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

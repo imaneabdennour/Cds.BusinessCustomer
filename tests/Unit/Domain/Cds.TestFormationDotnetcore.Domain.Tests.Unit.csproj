@@ -7,9 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup Label="Project References">
-        <ProjectReference Include="..\..\..\src\Api\Cds.TestFormationDotnetcore.Api.csproj" />
-        <ProjectReference Include="..\..\..\src\Domain\Cds.TestFormationDotnetcore.Domain.csproj" />
-        <ProjectReference Include="..\..\..\src\Infrastructure\Cds.TestFormationDotnetcore.Infrastructure.csproj" />
+        <ProjectReference Include="..\..\..\src\Api\Cds.BusinessCustomer.Api.csproj" />
+        <ProjectReference Include="..\..\..\src\Domain\Cds.BusinessCustomer.Domain.csproj" />
+        <ProjectReference Include="..\..\..\src\Infrastructure\Cds.BusinessCustomer.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
