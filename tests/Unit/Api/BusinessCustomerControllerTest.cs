@@ -41,7 +41,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var controller = new BusinessCustomerController(mockService.Object, mockLogger.Object, mockHandler.Object);
             // mock expected behavior when calling GetInfosById
             mockService.Setup(x => x.GetInfosById(It.IsAny<string>())).Returns(SingleTask());
-
+            
             // Act
             var resById = await controller.SearchById("45");
 

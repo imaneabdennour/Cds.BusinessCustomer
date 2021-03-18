@@ -46,17 +46,19 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
         }
 
         [Fact]
-        public async Task GetInfosBySiret_GivenNullSiret_ShouldReturnNull()
+        public async Task GetInfosBySiret_GivenNullOrEmptySiret_ShouldReturnNull()
         {
             //Arrange
             HttpClientConfig("Empty");
             var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
 
             //Act
-            var result = await cartegieAPi.GetInfosBySiret(null);
+            var result1 = await cartegieAPi.GetInfosBySiret(null);
+            var result2 = await cartegieAPi.GetInfosBySiret("");
 
             //Assert
-            Assert.Null(result);
+            Assert.Null(result1);
+            Assert.Null(result2);
         }
 
         [Fact]
@@ -91,7 +93,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
         }
 
         [Fact]
-        public async Task GetInfosById_GivenNullId_ShouldReturnNull()
+        public async Task GetInfosById_GivenNullOrEmptyId_ShouldReturnNull()
         {
             //Arrange
             HttpClientConfig("Empty");
@@ -99,10 +101,12 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
 
             //Act
-            var result = await cartegieAPi.GetInfosById(null);
+            var result1 = await cartegieAPi.GetInfosById(null);
+            var result2 = await cartegieAPi.GetInfosById("");
 
             //Assert
-            Assert.Null(result);
+            Assert.Null(result1);
+            Assert.Null(result2);
         }
 
             // Multiple Search        
@@ -123,7 +127,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
         }
 
         [Fact]
-        public async Task GetInfosByCriteria_GivenMultipleParamsWithNullZipCode_ShouldReturnSingleCustomer()
+        public async Task GetInfosByCriteria_GivenMultipleParamsWithNullOrEmptyZipCode_ShouldReturnSingleCustomer()
         {
             //Arrange
             HttpClientConfig("Multiple");
@@ -131,14 +135,16 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
 
             //Act
-            var result = await cartegieAPi.GetInfosByCriteria("123", null);
+            var result1 = await cartegieAPi.GetInfosByCriteria("123", null);
+            var result2 = await cartegieAPi.GetInfosByCriteria("123", "");
 
             //Assert
-            Assert.Null(result);
+            Assert.Null(result1);
+            Assert.Null(result2);
         }
 
         [Fact]
-        public async Task GetInfosByCriteria_GivenMultipleParamsWithNullSocialReason_ShouldReturnSingleCustomer()
+        public async Task GetInfosByCriteria_GivenMultipleParamsWithNullOrEmptySocialReason_ShouldReturnSingleCustomer()
         {
             //Arrange
             HttpClientConfig("Multiple");
@@ -146,10 +152,12 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
 
             //Act
-            var result = await cartegieAPi.GetInfosByCriteria(null, "123");
+            var result1 = await cartegieAPi.GetInfosByCriteria(null, "123");
+            var result2 = await cartegieAPi.GetInfosByCriteria("", "123");
 
             //Assert
-            Assert.Null(result);
+            Assert.Null(result1);
+            Assert.Null(result2);
         } 
 
 

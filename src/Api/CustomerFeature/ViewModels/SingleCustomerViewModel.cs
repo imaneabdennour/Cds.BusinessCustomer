@@ -10,7 +10,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.ViewModels
     /// ViewModel for single customer
     /// Exposed when searching by single param
     /// </summary>
-    public class SingleCustomerViewModel : ViewModel
+    public class SingleCustomerViewModel
     {
         /// <summary>
         /// Default constructor

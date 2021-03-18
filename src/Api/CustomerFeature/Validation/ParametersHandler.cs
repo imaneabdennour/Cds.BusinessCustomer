@@ -46,17 +46,23 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Validation
         /// <returns></returns>
         public (bool, string) Validate(string socialreason, string zipcode)
         {
-            if (socialreason == null && zipcode == null)
+            if (IsNullOrEmpty(socialreason) && IsNullOrEmpty(zipcode))
             {
                 _logger.LogError("Failed to retreive customers - You should specify Siret OR SocialReason and ZipCode");
                 return (false, "You should enter Siret OR SocialReason and ZipCode");
             }
-            if (socialreason == null || zipcode == null)
+            if (IsNullOrEmpty(socialreason) || IsNullOrEmpty(zipcode))
             {
                 _logger.LogError("Failed to retreive customers - You should specify both SocialReason and ZipCode");
                 return (false, "You should enter both SocialReason and ZipCode");
             }
             return (true, null);
+        }
+        private static bool IsNullOrEmpty(string s)
+        {
+            if(s == null || s == "")
+                return true;
+            return false;
         }
     }
 }

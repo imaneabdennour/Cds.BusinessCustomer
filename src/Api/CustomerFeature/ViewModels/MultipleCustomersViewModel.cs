@@ -10,7 +10,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.ViewModels
     /// ViewModel for multiple customers
     /// Exposed when searching by multiple params
     /// </summary>
-    public class MultipleCustomersViewModel : ViewModel
+    public class MultipleCustomersViewModel
     {
         /// <summary>
         /// Default constructor

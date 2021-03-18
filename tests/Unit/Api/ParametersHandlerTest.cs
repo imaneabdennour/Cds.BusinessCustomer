@@ -37,10 +37,12 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             // Arrange
 
             // Arrange
-            var actual = paramsHandler.Validate("123456");
+            var actual1 = paramsHandler.Validate("123456");
+            var actual2 = paramsHandler.Validate("");
 
             // Assert
-            Assert.False(actual.Item1);
+            Assert.False(actual1.Item1);
+            Assert.False(actual2.Item1);
         }
 
         [Fact]
@@ -56,26 +58,30 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
         }
 
         [Fact]
-        public void Validate_GivenNullSocialreason_ReturnsFalse()
+        public void Validate_GivenNullOrEmptySocialreason_ReturnsFalse()
         {
             // Arrange
 
             // Act
-            var actual = paramsHandler.Validate(null, "123456");
+            var actual1 = paramsHandler.Validate(null, "123456");
+            var actual2 = paramsHandler.Validate("", "123456");
 
             // Assert
-            Assert.False(actual.Item1);
+            Assert.False(actual1.Item1);
+            Assert.False(actual2.Item1);
         }
         [Fact]
-        public void Validate_GivenNullZipcode_ReturnsFalse()
+        public void Validate_GivenNullOrEmptyZipcode_ReturnsFalse()
         {
             // Arrange
 
             // Act
-            var actual = paramsHandler.Validate("123456", null);
+            var actual1 = paramsHandler.Validate("123456", null);
+            var actual2 = paramsHandler.Validate("123456", "");
 
             // Assert
-            Assert.False(actual.Item1);
+            Assert.False(actual1.Item1);
+            Assert.False(actual2.Item1);
         }
     }
 }

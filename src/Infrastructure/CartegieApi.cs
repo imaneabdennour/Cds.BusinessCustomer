@@ -34,7 +34,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <returns>Customer info</returns>
         public Task<CustomerSingleSearchDTO> GetInfosById(string id)
         {
-            if (id == null)
+            if (IsNullOrEmpty(id))
                 return Task.FromResult<CustomerSingleSearchDTO>(null);
 
             CustomerSingleSearchDTO consumerInfo = IdSearch(id).Result;
@@ -52,7 +52,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <returns>Customer info</returns>
         public Task<CustomerSingleSearchDTO> GetInfosBySiret(string siret)
         {
-            if (siret == null || siret.Length != 14)
+            if (IsNullOrEmpty(siret) || siret.Length != 14)
                 return Task.FromResult<CustomerSingleSearchDTO>(null);
 
             CustomerSingleSearchDTO consumerInfo = SiretSearch(siret).Result;
@@ -67,7 +67,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <returns>Customer info</returns>
         public Task<List<CustomerMultipleSearchDTO>> GetInfosByCriteria(string socialReason, string zipCode)
         {
-            if (socialReason == null || zipCode == null)
+            if (IsNullOrEmpty(zipCode) || IsNullOrEmpty(socialReason))
                 return Task.FromResult<List<CustomerMultipleSearchDTO>>(null);
             List<CustomerMultipleSearchDTO> list = MultipleSearch(socialReason, zipCode).Result;
             if (list == null || list.Count == 0)
@@ -87,7 +87,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <returns></returns>
         private async Task<CustomerSingleSearchDTO> IdSearch(string id)
         {
-            if (id == null)
+            if (IsNullOrEmpty(id))
                 return await Task.FromResult<CustomerSingleSearchDTO>(null);
 
             CustomerSingleSearchDTO ConsumerInfo = new CustomerSingleSearchDTO();
@@ -119,7 +119,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <returns></returns>
         private async Task<CustomerSingleSearchDTO> SiretSearch(string siret)
         {
-            if (siret == null || siret.Length != 14)
+            if (IsNullOrEmpty(siret) || siret.Length != 14)
                 return await Task.FromResult<CustomerSingleSearchDTO>(null);
 
             CustomerSingleSearchDTO ConsumerInfo = new CustomerSingleSearchDTO();
@@ -152,7 +152,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <returns></returns>
         private async Task<List<CustomerMultipleSearchDTO>> MultipleSearch(string socialReason, string zipcode)
         {
-            if (socialReason == null || zipcode == null)
+            if (IsNullOrEmpty(socialReason) || IsNullOrEmpty(zipcode))
                 return await Task.FromResult<List<CustomerMultipleSearchDTO>>(null);
 
             var consumerInfo = new List<CustomerMultipleSearchDTO>();
@@ -191,6 +191,8 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <returns></returns>
         private CustomerSingleSearchDTO FromResponseToDto(HttpResponseMessage res)
         {
+            if (res == null)
+                return null;
             // Storing the response details received from web api   
             var EmpResponse = res.Content.ReadAsStringAsync().Result;
             if (EmpResponse == null)
@@ -201,6 +203,11 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
             return JsonConvert.DeserializeObject<CustomerSingleSearchDTO>(EmpResponse.Substring(1, EmpResponse.Length - 2));
         }
 
-
+        private static bool IsNullOrEmpty(string s)
+        {
+            if (s == null || s == "")
+                return true;
+            return false;
+        }
     }
 }

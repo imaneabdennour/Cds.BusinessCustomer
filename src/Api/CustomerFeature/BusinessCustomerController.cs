@@ -55,7 +55,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
             try
             {
                 // recherche par siret :
-                if (siret != null)
+                if (!IsNullOrEmpty(siret))
                 {
                     (bool, string) res = _handler.Validate(siret);
                     if (!res.Item1)
@@ -118,6 +118,13 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                 _logger.LogError("Failed to retreive customer - Internal Server Error");
                 return StatusCode(500);     //500
             }
+        }
+
+        private static bool IsNullOrEmpty(string s)
+        {
+            if (s == null || s == "")
+                return true;
+            return false;
         }
 
         ///// <summary>
