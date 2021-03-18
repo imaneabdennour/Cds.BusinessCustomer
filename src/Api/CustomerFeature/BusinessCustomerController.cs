@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Cds.BusinessCustomer.Api.CustomerFeature.Errors;
+using Cds.BusinessCustomer.Api.CustomerFeature.Exceptions;
 
 namespace Cds.BusinessCustomer.Api.CustomerFeature
 {
@@ -59,15 +57,14 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                 {
                     (bool, string) res = _handler.Validate(siret);
                     if (!res.Item1)
-                    {   // if res.Item1 = false => BadRequest
-                        return new BadRequestError(res).Result;
-                    }
+                        throw new BadRequestException(res.Item2);
+                    
                     CustomerSingleSearchDTO response = await _service.GetInfosBySiret(siret);
 
                     if (response == null)
-                        return new NotFoundError("There is no business customer with such siret").Result;      //404      
+                        throw new NotFoundException("There is no business customer with such siret");
 
-                    return Ok(response.ToViewModel());    //200
+                    return Ok(response.ToViewModel());    
                 }
 
                 // recherche par raison sociale et code postal :
@@ -75,21 +72,31 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                 {
                     (bool, string) res = _handler.Validate(socialReason, zipCode);
                     if (!res.Item1)
-                        return new BadRequestError(res).Result;
+                        throw new BadRequestException(res.Item2);
 
                     List<CustomerMultipleSearchDTO> response = await _service.GetInfosByCriteria(socialReason, zipCode);
 
                     if (response == null)
-                        return new NotFoundError("There is no business customer with such social reason and zipcode").Result;      //404      
+                        throw new NotFoundException("There is no business customer with such social reason and zipcode");           
 
 
-                    return Ok(response.ToViewModel());    //200
+                    return Ok(response.ToViewModel());    
                 }
+            }
+            catch (BadRequestException e)
+            {
+                _logger.LogError($"BadRequetException : {e.Message}");
+                return new BadRequestError(e.Message).Result;
+            }
+            catch(NotFoundException e)
+            {
+                _logger.LogError($"NotFoundException :  {e.Message}");
+                return new NotFoundError(e.Message).Result;           
             }
             catch (Exception)
             {
                 _logger.LogError("Failed to retreive customers - Internal Server Error");
-                return StatusCode(500);     //500
+                return StatusCode(500);    
             }
         }
 
@@ -109,9 +116,14 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                 CustomerSingleSearchDTO response = await _service.GetInfosById(Id);
                 if (response == null)
                 {
-                    return new NotFoundError("There is no such business customer with such id").Result;      //404      
+                    throw new NotFoundException("There is no such business customer with such id");      //404      
                 }
                 return Ok(response.ToViewModel());
+            }
+            catch(NotFoundException e)
+            {
+                _logger.LogError($"NotFoundException : {e.Message}");
+                return new NotFoundError(e.Message).Result;
             }
             catch (Exception)
             {

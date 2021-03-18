@@ -15,13 +15,13 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Errors
         /// <summary>
         /// Constructing a BadRequest Error with message
         /// </summary>
-        /// <param name="message"></param>
-        public BadRequestError((bool, string) message)
+        /// <param name="s"></param>
+        public BadRequestError(string s)
         {
-            Result = new JsonResult(message)
+            Result = new JsonResult(s)
             {
                 StatusCode = StatusCodes.Status400BadRequest,  
-                Value = new { code = "400", message = message.Item2 }
+                Value = new { code = "400", message = s }
             };
         }
     }
