@@ -3,6 +3,7 @@ using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using FluentAssertions;
 using Xunit;
 
 namespace Cds.BusinessCustomer.Api.Tests.Unit
@@ -53,8 +54,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual = CustomerExtension.ToViewModel(singleInput);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.Equal("20100", actual.ZipCode);
+            actual.Should().NotBeNull();
+            actual.ZipCode.Should().Be("20100");
         }
 
         [Fact]
@@ -66,8 +67,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual = CustomerExtension.ToViewModel(multipleInput);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.NotEmpty(actual);
+            actual.Should().NotBeNull();
+            actual.Should().NotBeEmpty();
         }
     }
 }

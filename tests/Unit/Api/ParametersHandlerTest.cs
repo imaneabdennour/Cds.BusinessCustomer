@@ -1,9 +1,7 @@
 ﻿using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
 using Microsoft.Extensions.Logging;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using FluentAssertions;
 using Xunit;
 
 namespace Cds.BusinessCustomer.Api.Tests.Unit
@@ -28,7 +26,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual = paramsHandler.Validate("12345678945786");
 
             // Assert
-            Assert.True(actual.Item1);
+            actual.Item1.Should().BeTrue();
         }
 
         [Fact]
@@ -41,8 +39,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual2 = paramsHandler.Validate("");
 
             // Assert
-            Assert.False(actual1.Item1);
-            Assert.False(actual2.Item1);
+            actual1.Item1.Should().BeFalse();
+            actual2.Item1.Should().BeFalse();
         }
 
         [Fact]
@@ -54,7 +52,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual = paramsHandler.Validate("122", "4152");
 
             // Assert
-            Assert.True(actual.Item1);
+            actual.Item1.Should().BeTrue();
         }
 
         [Fact]
@@ -67,8 +65,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual2 = paramsHandler.Validate("", "123456");
 
             // Assert
-            Assert.False(actual1.Item1);
-            Assert.False(actual2.Item1);
+            actual1.Item1.Should().BeFalse();
+            actual2.Item1.Should().BeFalse();
         }
         [Fact]
         public void Validate_GivenNullOrEmptyZipcode_ReturnsFalse()
@@ -80,8 +78,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual2 = paramsHandler.Validate("123456", "");
 
             // Assert
-            Assert.False(actual1.Item1);
-            Assert.False(actual2.Item1);
+            actual1.Item1.Should().BeFalse();
+            actual2.Item1.Should().BeFalse();
         }
     }
 }

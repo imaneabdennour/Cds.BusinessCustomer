@@ -1,21 +1,12 @@
 ﻿using Cds.BusinessCustomer.Api.CustomerFeature;
-using Cds.BusinessCustomer.Api.CustomerFeature.Errors;
 using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
-using Cds.BusinessCustomer.Api.CustomerFeature.ViewModels;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
 using FluentAssertions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-using Moq.Protected;
-using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -46,9 +37,9 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var resById = await controller.SearchById("45");
 
             // Assert
-            Assert.NotNull(resById);
-            Assert.NotNull(resById.Result);
-            Assert.Equal(200, (resById.Result as ObjectResult).StatusCode);
+            resById.Should().NotBeNull();
+            resById.Result.Should().NotBeNull();
+            (resById.Result as ObjectResult).StatusCode.Should().Be(200);
         }
 
         [Fact]
@@ -64,9 +55,9 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var resBySiret = await controller.SearchByMultipleCriteria(null, null, "12345678978456");
 
             // Assert
-            Assert.NotNull(resBySiret);
-            Assert.NotNull(resBySiret.Result);
-            Assert.Equal(200, (resBySiret.Result as ObjectResult).StatusCode);
+            resBySiret.Should().NotBeNull();
+            resBySiret.Result.Should().NotBeNull();
+            (resBySiret.Result as ObjectResult).StatusCode.Should().Be(200);
         }
 
         [Fact]
@@ -82,9 +73,9 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var res =  await controller.SearchByMultipleCriteria("12", "34", null);
 
             // Assert
-            Assert.NotNull(res);
-            Assert.NotNull(res.Result);
-            Assert.Equal(200, (res.Result as ObjectResult).StatusCode) ;
+            res.Should().NotBeNull();
+            res.Result.Should().NotBeNull();
+            (res.Result as ObjectResult).StatusCode.Should().Be(200);
         }
 
        

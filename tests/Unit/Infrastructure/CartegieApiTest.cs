@@ -1,17 +1,12 @@
-﻿using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
-using Cds.TestFormationDotnetcore.Infrastructure;
-using Microsoft.AspNetCore.Mvc;
+﻿using Cds.TestFormationDotnetcore.Infrastructure;
 using Moq;
 using Moq.Protected;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
+using FluentAssertions;
 
 namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 {
@@ -41,8 +36,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 
             //Assert
             Assert.NotNull(result);
-            // valid siret is of length 14
-            Assert.Equal("UBER PARTNER SUPPORT FRANCE SAS", result.Name);
+            result.Name.Should().Be("UBER PARTNER SUPPORT FRANCE SAS");
         }
 
         [Fact]
@@ -57,8 +51,8 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result2 = await cartegieAPi.GetInfosBySiret("");
 
             //Assert
-            Assert.Null(result1);
-            Assert.Null(result2);
+            result1.Should().BeNull();
+            result2.Should().BeNull();
         }
 
         [Fact]
@@ -72,7 +66,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result = await cartegieAPi.GetInfosBySiret("123");
 
             //Assert
-            Assert.Null(result);
+            result.Should().BeNull();
         }
 
             // Id Search      
@@ -88,8 +82,8 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result = await cartegieAPi.GetInfosById("1235");
 
             //Assert
-            Assert.NotNull(result);
-            Assert.Equal("UBER PARTNER SUPPORT FRANCE SAS", result.Name);
+            result.Should().NotBeNull();
+            result.Name.Should().Be("UBER PARTNER SUPPORT FRANCE SAS");
         }
 
         [Fact]
@@ -105,8 +99,8 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result2 = await cartegieAPi.GetInfosById("");
 
             //Assert
-            Assert.Null(result1);
-            Assert.Null(result2);
+            result1.Should().BeNull();
+            result2.Should().BeNull();
         }
 
             // Multiple Search        
@@ -123,7 +117,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result = await cartegieAPi.GetInfosByCriteria("123", "456");
 
             //Assert
-            Assert.NotNull(result);
+            result.Should().NotBeNull();
         }
 
         [Fact]
@@ -139,8 +133,8 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result2 = await cartegieAPi.GetInfosByCriteria("123", "");
 
             //Assert
-            Assert.Null(result1);
-            Assert.Null(result2);
+            result1.Should().BeNull();
+            result2.Should().BeNull();
         }
 
         [Fact]
@@ -156,8 +150,8 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result2 = await cartegieAPi.GetInfosByCriteria("", "123");
 
             //Assert
-            Assert.Null(result1);
-            Assert.Null(result2);
+            result1.Should().BeNull();
+            result2.Should().BeNull();
         } 
 
 
