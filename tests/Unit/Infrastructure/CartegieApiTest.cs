@@ -17,7 +17,6 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 {
     public class CartegieApiTest
     {
-        //Arrange
         Mock<CartegieConfiguration> mockConfig;
         Mock<IHttpClientFactory> mockFactory;
 
@@ -28,52 +27,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
         }
         
             // Siret Search
-
-       [Fact]
-       public async Task SiretSearch_GivenValidSiret_ShouldReturnSingleCustomer()
-       {
-            //Arrange
-            HttpClientConfig("Single");
-            // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
-
-            //Act
-            var result = await cartegieAPi.SiretSearch("12345678912345");
-
-            //Assert
-            Assert.NotNull(result);
-            // valid sirte is of length 14
-            Assert.Equal("UBER PARTNER SUPPORT FRANCE SAS", result.Name);
-        }
-
-        [Fact]
-        public async Task SiretSearch_GivenNullSiret_ShouldReturnNull()
-        {
-            //Arrange
-            HttpClientConfig("Empty");
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
-
-            //Act
-            var result = await cartegieAPi.SiretSearch(null);
-
-            //Assert
-            Assert.Null(result);
-        }
-
-        [Fact]
-        public async Task SiretSearch_GivenInvalidSiret_ShouldReturnNull()
-        {
-            //Arrange
-            HttpClientConfig("Empty");
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
-
-            //Act
-            var result = await cartegieAPi.SiretSearch("123");
-
-            //Assert
-            Assert.Null(result);
-        }
-
+     
         [Fact]
         public async Task GetInfosBySiret_GivenValidSiret_ShouldReturnSingleCustomer()
         {
@@ -87,7 +41,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 
             //Assert
             Assert.NotNull(result);
-            // valid sirte is of length 14
+            // valid siret is of length 14
             Assert.Equal("UBER PARTNER SUPPORT FRANCE SAS", result.Name);
         }
 
@@ -119,37 +73,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             Assert.Null(result);
         }
 
-            // Id Search
-
-        [Fact]
-        public async Task IdSearch_GivenId_ShouldReturnSingleCustomer()
-        {
-            //Arrange
-            HttpClientConfig("Single");
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
-
-            //Act
-            var result = await cartegieAPi.IdSearch("1235");
-
-            //Assert
-            Assert.NotNull(result);
-            Assert.Equal("UBER PARTNER SUPPORT FRANCE SAS", result.Name);
-        }
-
-        [Fact]
-        public async Task IdSearch_GivenNullId_ShouldReturnNull()
-        {
-            //Arrange
-            HttpClientConfig("Empty");
-            // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
-
-            //Act
-            var result = await cartegieAPi.IdSearch(null);
-
-            //Assert
-            Assert.Null(result);
-        }
+            // Id Search      
 
         [Fact]
         public async Task GetInfosById_GivenId_ShouldReturnSingleCustomer()
@@ -181,53 +105,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             Assert.Null(result);
         }
 
-            // Multiple Search
-
-        [Fact]
-        public async Task MultipleSearch_GivenMultipleParams_ShouldReturnSingleCustomer()
-        {
-            //Arrange
-            HttpClientConfig("Multiple");
-            // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
-
-            //Act
-            var result = await cartegieAPi.MultipleSearch("123", "456");
-
-            //Assert
-            Assert.NotNull(result);
-        }
-
-       
-        [Fact]
-        public async Task MultipleSearch_GivenMultipleParamsWithNullSocialReason_ShouldReturnSingleCustomer()
-        {
-            //Arrange
-            HttpClientConfig("Multiple");
-            // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
-
-            //Act
-            var result = await cartegieAPi.MultipleSearch(null, "123");
-
-            //Assert
-            Assert.Null(result);
-        }
-
-        [Fact]
-        public async Task MultipleSearch_GivenMultipleParamsWithNullZipCode_ShouldReturnSingleCustomer()
-        {
-            //Arrange
-            HttpClientConfig("Multiple");
-            // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
-
-            //Act
-            var result = await cartegieAPi.MultipleSearch("123", null);
-
-            //Assert
-            Assert.Null(result);
-        }
+            // Multiple Search        
 
         [Fact]
         public async Task GetInfosByCriteria_GivenMultipleParams_ShouldReturnSingleCustomer()

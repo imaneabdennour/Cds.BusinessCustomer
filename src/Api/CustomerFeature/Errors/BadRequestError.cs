@@ -1,15 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Cds.BusinessCustomer.Api.CustomerFeature.Errors
 {
     /// <summary>
-    /// 
+    /// Error : BadRequest
     /// </summary>
     public class BadRequestError
     {
@@ -18,7 +13,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Errors
         /// </summary>
         public JsonResult Result { get; set; }
         /// <summary>
-        /// 
+        /// Constructing a BadRequest Error with message
         /// </summary>
         /// <param name="message"></param>
         public BadRequestError((bool, string) message)

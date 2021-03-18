@@ -15,8 +15,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
     public class CartegieApi : ICartegieApi
     {
         private readonly IHttpClientFactory _clientFactory;
-        CartegieConfiguration _configuration;
-
+        private CartegieConfiguration _configuration;
         /// <summary>
         /// Cartagie Api cstr
         /// </summary>
@@ -25,9 +24,9 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         public CartegieApi(CartegieConfiguration myConfiguration, IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
-            _configuration = myConfiguration;           
-        }
+            _configuration = myConfiguration;
 
+        }
         /// <summary>
         /// Get customer infos by id
         /// </summary>
@@ -79,15 +78,14 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         }
 
 
-        /// Communication with API de cartégie ///
-
+                    /// Communication with API de cartégie  ///
 
         /// <summary>
         /// Method to handle Cartégie api - searching by id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<CustomerSingleSearchDTO> IdSearch(string id)
+        private async Task<CustomerSingleSearchDTO> IdSearch(string id)
         {
             if (id == null)
                 return await Task.FromResult<CustomerSingleSearchDTO>(null);
@@ -95,22 +93,22 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
             CustomerSingleSearchDTO ConsumerInfo = new CustomerSingleSearchDTO();
 
             var client = _clientFactory.CreateClient();
-            
-                client.BaseAddress = new Uri("https://6037a3775435040017722f92.mockapi.io/api/v1/Company/");
 
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.BaseAddress = new Uri("https://6037a3775435040017722f92.mockapi.io/api/v1/Company/");
 
-                // status code and data :
-                HttpResponseMessage res = await client.GetAsync(_configuration.ById);
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                if (res.IsSuccessStatusCode)
-                {
-                    ConsumerInfo = FromResponseToDto(res);
-                    if (ConsumerInfo == null)
-                        return await Task.FromResult<CustomerSingleSearchDTO>(null);
-                }
-            
+            // status code and data :
+            HttpResponseMessage res = await client.GetAsync(_configuration.ById);
+
+            if (res.IsSuccessStatusCode)
+            {
+                ConsumerInfo = FromResponseToDto(res);
+                if (ConsumerInfo == null)
+                    return await Task.FromResult<CustomerSingleSearchDTO>(null);
+            }
+
             return ConsumerInfo;
         }
 
@@ -119,7 +117,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// </summary>
         /// <param name="siret"></param>
         /// <returns></returns>
-        public async Task<CustomerSingleSearchDTO> SiretSearch(string siret)
+        private async Task<CustomerSingleSearchDTO> SiretSearch(string siret)
         {
             if (siret == null || siret.Length != 14)
                 return await Task.FromResult<CustomerSingleSearchDTO>(null);
@@ -147,29 +145,12 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         }
 
         /// <summary>
-        /// Converting HttpResponseMessage to DTO
-        /// </summary>
-        /// <param name="res"></param>
-        /// <returns></returns>
-        public CustomerSingleSearchDTO FromResponseToDto(HttpResponseMessage res)
-        {
-            // Storing the response details received from web api   
-            var EmpResponse = res.Content.ReadAsStringAsync().Result;
-            if (EmpResponse == null)
-            {
-                return null;
-            }
-            // Deserializing the response received from web api and storing it  
-            return JsonConvert.DeserializeObject<CustomerSingleSearchDTO>(EmpResponse.Substring(1, EmpResponse.Length - 2));
-        }
-
-        /// <summary>
         /// Method to handle Cartégie api - searching by social number and zip code
         /// </summary>
         /// <param name="socialReason"></param>
         /// <param name="zipcode"></param>
         /// <returns></returns>
-        public async Task<List<CustomerMultipleSearchDTO>> MultipleSearch(string socialReason, string zipcode)
+        private async Task<List<CustomerMultipleSearchDTO>> MultipleSearch(string socialReason, string zipcode)
         {
             if (socialReason == null || zipcode == null)
                 return await Task.FromResult<List<CustomerMultipleSearchDTO>>(null);
@@ -201,5 +182,25 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
 
             return consumerInfo;
         }
+
+
+        /// <summary>
+        /// Converting HttpResponseMessage to DTO
+        /// </summary>
+        /// <param name="res"></param>
+        /// <returns></returns>
+        private CustomerSingleSearchDTO FromResponseToDto(HttpResponseMessage res)
+        {
+            // Storing the response details received from web api   
+            var EmpResponse = res.Content.ReadAsStringAsync().Result;
+            if (EmpResponse == null)
+            {
+                return null;
+            }
+            // Deserializing the response received from web api and storing it  
+            return JsonConvert.DeserializeObject<CustomerSingleSearchDTO>(EmpResponse.Substring(1, EmpResponse.Length - 2));
+        }
+
+
     }
 }

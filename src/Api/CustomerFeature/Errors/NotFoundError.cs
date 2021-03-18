@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Cds.BusinessCustomer.Api.CustomerFeature.Errors
 {
     /// <summary>
-    /// 
+    /// Error : Not Found
     /// </summary>
     public class NotFoundError
     {
@@ -16,8 +12,9 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Errors
         /// 
         /// </summary>
         public JsonResult Result { get; set; }
+
         /// <summary>
-        /// 
+        /// Constructing a NotFound Error with message
         /// </summary>
         /// <param name="message"></param>
         public NotFoundError(string message)

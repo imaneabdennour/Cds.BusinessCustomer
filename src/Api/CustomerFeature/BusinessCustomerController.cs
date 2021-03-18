@@ -50,7 +50,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> SearchByMultipleCriteria([FromQuery] string socialReason, [FromQuery] string zipCode, [FromQuery] string siret)
+        public async Task<ActionResult<object>> SearchByMultipleCriteria([FromQuery] string socialReason, [FromQuery] string zipCode, [FromQuery] string siret)
         {
             try
             {
@@ -120,26 +120,26 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
             }
         }
 
-        /// <summary>
-        /// Health check for : HTTP
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("health")]
-        public async Task<bool> GetHealthCheck()
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("https://localhost:44383/");
+        ///// <summary>
+        ///// Health check for : HTTP
+        ///// </summary>
+        ///// <returns></returns>
+        //[HttpGet("health")]
+        //public async Task<bool> GetHealthCheck()
+        //{
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri("https://localhost:44383/");
 
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //        client.DefaultRequestHeaders.Clear();
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                // status code and data :
-                HttpResponseMessage res = await client.GetAsync("healthCheck");
+        //        // status code and data :
+        //        HttpResponseMessage res = await client.GetAsync("healthCheck");
 
-                return res.IsSuccessStatusCode;
-            }
-        }
+        //        return res.IsSuccessStatusCode;
+        //    }
+        //}
 
     }
 }

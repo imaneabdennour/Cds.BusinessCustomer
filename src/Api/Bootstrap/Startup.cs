@@ -12,6 +12,7 @@ using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
 using Cds.TestFormationDotnetcore.Infrastructure;
 using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
 using Microsoft.AspNetCore.Mvc;
+using Cds.BusinessCustomer.Infrastructure;
 
 namespace Cds.TestFormationDotnetcore.Api.Bootstrap
 {
@@ -47,13 +48,12 @@ namespace Cds.TestFormationDotnetcore.Api.Bootstrap
         /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
         {
-
             services
                 .AddHealthChecks()
-              //  .AddCheck("Default", () => HealthCheckResult.Healthy("OK"))
-                //.AddSqlServer("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
-                //.AddMongoDb("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
-                // [You can add more checks here...]
+                .AddCheck("Default", () => HealthCheckResult.Healthy("OK"))
+            //.AddSqlServer("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
+            //.AddMongoDb("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
+            // [You can add more checks here...]
             ;
 
             services
@@ -107,11 +107,12 @@ namespace Cds.TestFormationDotnetcore.Api.Bootstrap
             // [You can add your own application services here...]
 
             // DI : 
-            services.AddScoped<ICartegieApi, CartegieApi>();
-            // Registers api handler.
-            services.AddScoped<IParametersHandler, ParametersHandler>();
-            // Injection of configuration :
-            services.AddSingleton(_configuration.GetSection("CartegieConfiguration").Get<CartegieConfiguration>());
+            services
+                .AddScoped<ICartegieApi, CartegieApi>()
+                // Registers api handler.
+                .AddScoped<IParametersHandler, ParametersHandler>()
+                // Injection of configuration :
+                .AddSingleton(_configuration.GetSection("CartegieConfiguration").Get<CartegieConfiguration>());
 
         }
 
