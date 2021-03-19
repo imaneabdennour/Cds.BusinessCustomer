@@ -8,6 +8,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Exceptions
     /// <summary>
     /// NotFound Exception
     /// </summary>
+    [Serializable]
     public class NotFoundException : Exception
     {
         /// <summary>
@@ -27,5 +28,14 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Exceptions
         {
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="innerException"></param>
+        public NotFoundException(string message, Exception innerException)
+            : base(message, innerException)
+                { }
     }
 }

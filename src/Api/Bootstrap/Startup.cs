@@ -14,7 +14,7 @@ using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
 using Microsoft.AspNetCore.Mvc;
 using Cds.BusinessCustomer.Infrastructure;
 
-namespace Cds.TestFormationDotnetcore.Api.Bootstrap
+namespace Cds.BusinessCustomer.Api.Bootstrap
 {
 #pragma warning disable S1200
 

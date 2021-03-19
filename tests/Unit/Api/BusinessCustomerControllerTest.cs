@@ -1,4 +1,5 @@
 ﻿using Cds.BusinessCustomer.Api.CustomerFeature;
+using Cds.BusinessCustomer.Api.CustomerFeature.Exceptions;
 using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
@@ -14,9 +15,9 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
 {
     public class BusinessCustomerControllerTest
     {
-        Mock<ICartegieApi> mockService;
-        Mock<ILogger<BusinessCustomerController>> mockLogger;
-        Mock<IParametersHandler> mockHandler;
+        readonly Mock<ICartegieApi> mockService;
+        readonly Mock<ILogger<BusinessCustomerController>> mockLogger;
+        readonly Mock<IParametersHandler> mockHandler;
 
         public BusinessCustomerControllerTest()
         {
@@ -79,7 +80,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
         }
 
        
-        public Task<CustomerSingleSearchDTO> SingleTask()
+        private Task<CustomerSingleSearchDTO> SingleTask()
         {
             return Task.FromResult(new CustomerSingleSearchDTO()
             {
@@ -94,7 +95,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
                 ZipCode = "20100"
             });
         }
-        public Task<List<CustomerMultipleSearchDTO>> MultipleTask()
+        private Task<List<CustomerMultipleSearchDTO>> MultipleTask()
         {
             return Task.FromResult(new List<CustomerMultipleSearchDTO>()
             {
@@ -113,10 +114,10 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             });
         }
 
-        //private Task<CustomerMultipleSearchDTO> EmptyTask()
-        //{
-        //    return Task.FromResult<CustomerSingleSearchDTO>(null);
-        //}
+        private Task<CustomerSingleSearchDTO> EmptyTask()
+        {
+            return Task.FromResult<CustomerSingleSearchDTO>(null);
+        }
 
     }
 }

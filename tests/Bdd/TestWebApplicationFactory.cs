@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Cds.BusinessCustomer.Api.Bootstrap;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
-using Cds.TestFormationDotnetcore.Api.Bootstrap;
 
 namespace Cds.TestFormationDotnetcore.Tests.Bdd
 {
+    /* A WebApplicationFactory is a factory for bootstrapping an application in memory for functional end to end tests. 
+     It needs to be passed a type parameter, which is basically a typei n the entry point assembly of the application. 
+     Typically the Startup or Program classes can be used.
+    */
     public class TestWebApplicationFactory : WebApplicationFactory<Startup>
     {
         protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -17,7 +21,8 @@ namespace Cds.TestFormationDotnetcore.Tests.Bdd
                         // Add your GLOBAL mocks here
                         /* Exemple to mock HttpClient :
                          services
-                           .AddHttpClient([MyHttpClient])
+                           .AddHttpClient([
+                        +6])
                            .AddHttpMessageHandler(() => new GlobalServiceHandler());
                         */
 #pragma warning restore S125

@@ -54,7 +54,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cds.TestFormationDotnetcore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cds.BusinessCustomer.Infrastructure.Tests.Unit", "tests\Unit\Infrastructure\Cds.BusinessCustomer.Infrastructure.Tests.Unit.csproj", "{A85F9060-C715-4B08-B529-7BD0FB4ECB34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cds.TestFormationDotnetcore.Tests.Bdd", "tests\Bdd\Cds.TestFormationDotnetcore.Tests.Bdd.csproj", "{49CD8FB9-B1D5-4C44-8EC4-0A7B9DB401D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cds.BusinessCustomer.Tests.Bdd", "tests\Bdd\Cds.BusinessCustomer.Tests.Bdd.csproj", "{49CD8FB9-B1D5-4C44-8EC4-0A7B9DB401D0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cds.TestFormationDotnetcore.Tests.Pact.Consumer", "tests\Pact\Consumer\Cds.TestFormationDotnetcore.Tests.Pact.Consumer.csproj", "{689B1008-26DA-42E6-9C35-70D33A7E59F7}"
 EndProject

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Cds.TestFormationDotnetcore.Feature
+namespace Cds.BusinessCustomer.Tests.Bdd.Feature
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Cds.TestFormationDotnetcore.Feature
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class FeatureStepsFeature : object, Xunit.IClassFixture<FeatureStepsFeature.FixtureData>, System.IDisposable
+    public partial class BusinessCustomerByIdFeature : object, Xunit.IClassFixture<BusinessCustomerByIdFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace Cds.TestFormationDotnetcore.Feature
 #line 1 "Feature.feature"
 #line hidden
         
-        public FeatureStepsFeature(FeatureStepsFeature.FixtureData fixtureData, Cds_TestFormationDotnetcore_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public BusinessCustomerByIdFeature(BusinessCustomerByIdFeature.FixtureData fixtureData, Cds_BusinessCustomer_Tests_Bdd_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace Cds.TestFormationDotnetcore.Feature
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FeatureSteps", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BusinessCustomerById", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,14 +80,17 @@ namespace Cds.TestFormationDotnetcore.Feature
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="test")]
-        [Xunit.TraitAttribute("FeatureTitle", "FeatureSteps")]
-        [Xunit.TraitAttribute("Description", "test")]
-        public virtual void Test()
+        [Xunit.SkippableFactAttribute(DisplayName="Get Business Customer by Id")]
+        [Xunit.TraitAttribute("FeatureTitle", "BusinessCustomerById")]
+        [Xunit.TraitAttribute("Description", "Get Business Customer by Id")]
+        [Xunit.TraitAttribute("Category", "BusinessCustomerById")]
+        public virtual void GetBusinessCustomerById()
         {
-            string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("test", null, ((string[])(null)));
-#line 3
+            string[] tagsOfScenario = new string[] {
+                    "BusinessCustomerById"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Business Customer by Id", null, new string[] {
+                        "BusinessCustomerById"});
+#line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -107,6 +110,46 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 5
+ testRunner.When("the Business Customer API receives the get request with Id:\"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 6
+ testRunner.Then("the response status is \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "property",
+                            "value"});
+                table1.AddRow(new string[] {
+                            "name",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table1.AddRow(new string[] {
+                            "siret",
+                            "81999478100022"});
+                table1.AddRow(new string[] {
+                            "naf_code",
+                            "8299Z"});
+                table1.AddRow(new string[] {
+                            "adress",
+                            "Maarif"});
+                table1.AddRow(new string[] {
+                            "phone",
+                            ""});
+                table1.AddRow(new string[] {
+                            "zip_code",
+                            "33000"});
+                table1.AddRow(new string[] {
+                            "city",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table1.AddRow(new string[] {
+                            "social_reason",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table1.AddRow(new string[] {
+                            "civility",
+                            ""});
+#line 7
+ testRunner.And("the Business Customer API sends the information related to the business customer:" +
+                        "", ((string)(null)), table1, "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -118,12 +161,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                FeatureStepsFeature.FeatureSetup();
+                BusinessCustomerByIdFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                FeatureStepsFeature.FeatureTearDown();
+                BusinessCustomerByIdFeature.FeatureTearDown();
             }
         }
     }

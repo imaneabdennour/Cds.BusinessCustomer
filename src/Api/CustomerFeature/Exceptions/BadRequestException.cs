@@ -8,6 +8,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Exceptions
     /// <summary>
     /// BadRequets Exception
     /// </summary>
+    [Serializable]
     public class BadRequestException : Exception
     {
         /// <summary>

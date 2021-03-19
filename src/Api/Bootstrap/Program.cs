@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Cds.TestFormationDotnetcore.Api.Bootstrap
+namespace Cds.BusinessCustomer.Api.Bootstrap
 {
     /// <summary>
     /// Entry point class used at runtime.
