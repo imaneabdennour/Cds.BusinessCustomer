@@ -15,6 +15,15 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         public string BaseUrl { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public string getBaseUrl()
+        {
+            return BaseUrl;
+        }
+
+        /// <summary>
         /// Cartegie api's key
         /// </summary>
         public string ApiKey { get; set; }

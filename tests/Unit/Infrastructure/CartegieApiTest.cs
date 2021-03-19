@@ -7,17 +7,20 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 using FluentAssertions;
+using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
+using System;
 
 namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 {
     public class CartegieApiTest
     {
-        Mock<CartegieConfiguration> mockConfig;
+        CartegieConfiguration config;
         Mock<IHttpClientFactory> mockFactory;
 
         public CartegieApiTest()
         {
-            mockConfig = new Mock<CartegieConfiguration>();
+            // It's easy to a real config, instead of mocking it :
+            config = new CartegieConfiguration { BaseUrl = "https://6037a3775435040017722f92.mockapi.io/api/v1/Company/" };
             mockFactory = new Mock<IHttpClientFactory>();
         }
         
@@ -29,7 +32,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             //Arrange
             HttpClientConfig("Single");
             // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
+            var cartegieAPi = new CartegieApi(config, mockFactory.Object);
 
             //Act
             var result = await cartegieAPi.GetInfosBySiret("12345678912345");
@@ -44,7 +47,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
         {
             //Arrange
             HttpClientConfig("Empty");
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
+            var cartegieAPi = new CartegieApi(config, mockFactory.Object);
 
             //Act
             var result1 = await cartegieAPi.GetInfosBySiret(null);
@@ -60,7 +63,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
         {
             //Arrange
             HttpClientConfig("Empty");
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
+            var cartegieAPi = new CartegieApi(config, mockFactory.Object);
 
             //Act
             var result = await cartegieAPi.GetInfosBySiret("123");
@@ -76,7 +79,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
         {
             //Arrange
             HttpClientConfig("Single");
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
+            var cartegieAPi = new CartegieApi(config, mockFactory.Object);            
 
             //Act
             var result = await cartegieAPi.GetInfosById("1235");
@@ -92,7 +95,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             //Arrange
             HttpClientConfig("Empty");
             // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
+            var cartegieAPi = new CartegieApi(config, mockFactory.Object);
 
             //Act
             var result1 = await cartegieAPi.GetInfosById(null);
@@ -111,7 +114,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             //Arrange
             HttpClientConfig("Multiple");
             // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
+            var cartegieAPi = new CartegieApi(config, mockFactory.Object);
 
             //Act
             var result = await cartegieAPi.GetInfosByCriteria("123", "456");
@@ -126,7 +129,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             //Arrange
             HttpClientConfig("Multiple");
             // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
+            var cartegieAPi = new CartegieApi(config, mockFactory.Object);
 
             //Act
             var result1 = await cartegieAPi.GetInfosByCriteria("123", null);
@@ -143,7 +146,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             //Arrange
             HttpClientConfig("Multiple");
             // object with mocked params
-            var cartegieAPi = new CartegieApi(mockConfig.Object, mockFactory.Object);
+            var cartegieAPi = new CartegieApi(config, mockFactory.Object);
 
             //Act
             var result1 = await cartegieAPi.GetInfosByCriteria(null, "123");

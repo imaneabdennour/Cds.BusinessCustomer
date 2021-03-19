@@ -112,6 +112,11 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
                 }
             });
         }
-      
+
+        //private Task<CustomerMultipleSearchDTO> EmptyTask()
+        //{
+        //    return Task.FromResult<CustomerSingleSearchDTO>(null);
+        //}
+
     }
 }

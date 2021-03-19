@@ -94,7 +94,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
 
             var client = _clientFactory.CreateClient();
 
-            client.BaseAddress = new Uri("https://6037a3775435040017722f92.mockapi.io/api/v1/Company/");
+            client.BaseAddress = new Uri(_configuration.BaseUrl);
 
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -126,7 +126,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
 
             using (var client = _clientFactory.CreateClient())
             {
-                client.BaseAddress = new Uri("https://6037a3775435040017722f92.mockapi.io/api/v1/Company/");
+                client.BaseAddress = new Uri(_configuration.BaseUrl);
 
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -159,7 +159,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
 
             using (var client = _clientFactory.CreateClient())
             {
-                client.BaseAddress = new Uri("https://6037a3775435040017722f92.mockapi.io/api/v1/Company/");
+                client.BaseAddress = new Uri(_configuration.BaseUrl);
 
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
