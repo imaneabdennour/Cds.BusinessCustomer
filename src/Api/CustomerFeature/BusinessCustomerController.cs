@@ -16,6 +16,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
     /// <summary>
     /// Business Customer Controller
     /// </summary>
+    [Route("business-customer-information/")]
     public class BusinessCustomerController : Controller
     {
         private readonly ICartegieApi _service;
@@ -42,7 +43,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
         /// <param name="zipCode"></param>
         /// <param name="siret"></param>
         /// <returns></returns>
-        [HttpGet("business-customer-information")]
+        [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SingleCustomerViewModel))]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MultipleCustomersViewModel))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -55,9 +56,9 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                 // recherche par siret :
                 if (!IsNullOrEmpty(siret))
                 {
-                    (bool, string) res = _handler.Validate(siret);
-                    if (!res.Item1)
-                        throw new BadRequestException(res.Item2);
+                    var isValid = _handler.Validate(siret);
+                    if (!isValid)
+                        throw new BadRequestException("Invalid Siret - should be of length 14");
                     
                     CustomerSingleSearchDTO response = await _service.GetInfosBySiret(siret);
 
@@ -68,11 +69,11 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                 }
 
                 // recherche par raison sociale et code postal :
-                else
+                else if(!IsNullOrEmpty(socialReason) || !IsNullOrEmpty(zipCode))
                 {
-                    (bool, string) res = _handler.Validate(socialReason, zipCode);
-                    if (!res.Item1)
-                        throw new BadRequestException(res.Item2);
+                    var isValid = _handler.Validate(socialReason, zipCode);
+                    if (!isValid)
+                        throw new BadRequestException("You should enter both SocialReason and ZipCode");
 
                     List<CustomerMultipleSearchDTO> response = await _service.GetInfosByCriteria(socialReason, zipCode);
 
@@ -81,6 +82,11 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
 
 
                     return Ok(response.ToViewModel());    
+                }
+                // aucun des params n'est rentré :
+                else
+                {
+                    throw new BadRequestException("You should enter Siret OR SocialReason and ZipCode");
                 }
             }
             catch (BadRequestException e)
@@ -105,7 +111,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        [HttpGet("business-customer-information/{Id}")]
+        [HttpGet("{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SingleCustomerViewModel))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

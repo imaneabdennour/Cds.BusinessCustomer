@@ -26,7 +26,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual = paramsHandler.Validate("12345678945786");
 
             // Assert
-            actual.Item1.Should().BeTrue();
+            actual.Should().BeTrue();
         }
 
         [Fact]
@@ -39,8 +39,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual2 = paramsHandler.Validate("");
 
             // Assert
-            actual1.Item1.Should().BeFalse();
-            actual2.Item1.Should().BeFalse();
+            actual1.Should().BeFalse();
+            actual2.Should().BeFalse();
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual = paramsHandler.Validate("122", "4152");
 
             // Assert
-            actual.Item1.Should().BeTrue();
+            actual.Should().BeTrue();
         }
 
         [Fact]
@@ -65,8 +65,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual2 = paramsHandler.Validate("", "123456");
 
             // Assert
-            actual1.Item1.Should().BeFalse();
-            actual2.Item1.Should().BeFalse();
+            actual1.Should().BeFalse();
+            actual2.Should().BeFalse();
         }
         [Fact]
         public void Validate_GivenNullOrEmptyZipcode_ReturnsFalse()
@@ -78,8 +78,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             var actual2 = paramsHandler.Validate("123456", "");
 
             // Assert
-            actual1.Item1.Should().BeFalse();
-            actual2.Item1.Should().BeFalse();
+            actual1.Should().BeFalse();
+            actual2.Should().BeFalse();
         }
     }
 }

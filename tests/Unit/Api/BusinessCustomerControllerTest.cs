@@ -49,7 +49,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             // Arrange            
             var controller = new BusinessCustomerController(mockService.Object, mockLogger.Object, mockHandler.Object);
             // mock expected behavior
-            mockHandler.Setup(x => x.Validate(It.IsAny<string>())).Returns((true, null));
+            mockHandler.Setup(x => x.Validate(It.IsAny<string>())).Returns(true);
             mockService.Setup(x => x.GetInfosBySiret(It.IsAny<string>())).Returns(SingleTask());
 
             // Act
@@ -67,7 +67,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             // Arrange            
             var controller = new BusinessCustomerController(mockService.Object, mockLogger.Object, mockHandler.Object);
             // mock expected behavior
-            mockHandler.Setup(x => x.Validate(It.IsAny<string>(), It.IsAny<string>())).Returns((true, null));
+            mockHandler.Setup(x => x.Validate(It.IsAny<string>(), It.IsAny<string>())).Returns(true);
             mockService.Setup(x => x.GetInfosByCriteria(It.IsAny<string>(), It.IsAny<string>())).Returns(MultipleTask());
 
             // Act

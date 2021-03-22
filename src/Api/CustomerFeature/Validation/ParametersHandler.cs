@@ -27,15 +27,14 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Validation
         /// </summary>
         /// <param name="siret"></param>
         /// <returns></returns>
-        public (bool, string) Validate(string siret)
+        public bool Validate(string siret)
         {
             if (siret.Length != 14)
             {
                 _logger.LogError($"Failed to retreive customer with siret = {siret}, Siret string should be of length 14");
-
-                return (false, "Invalid Siret - should be of length 14");
+                return false;
             }
-            return (true, null);
+            return true;
         }
 
         /// <summary>
@@ -44,19 +43,19 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Validation
         /// <param name="socialreason"></param>
         /// <param name="zipcode"></param>
         /// <returns></returns>
-        public (bool, string) Validate(string socialreason, string zipcode)
+        public bool Validate(string socialreason, string zipcode)
         {
             if (IsNullOrEmpty(socialreason) && IsNullOrEmpty(zipcode))
             {
                 _logger.LogError("Failed to retreive customers - You should specify Siret OR SocialReason and ZipCode");
-                return (false, "You should enter Siret OR SocialReason and ZipCode");
+                return false;
             }
             if (IsNullOrEmpty(socialreason) || IsNullOrEmpty(zipcode))
             {
                 _logger.LogError("Failed to retreive customers - You should specify both SocialReason and ZipCode");
-                return (false, "You should enter both SocialReason and ZipCode");
+                return false;
             }
-            return (true, null);
+            return true;
         }
         private static bool IsNullOrEmpty(string s)
         {

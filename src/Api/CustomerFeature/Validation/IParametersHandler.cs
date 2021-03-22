@@ -14,15 +14,15 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Validation
         /// Validation for parameter : siret
         /// </summary>
         /// <param name="siret"></param>
-        /// <returns>(bool, string) => (siret valide ou pas, message d'erreur au cas non valide)</returns>
-        public (bool, string) Validate(string siret);
+        /// <returns> True if siret is valid, false otherwise </returns>
+        public bool Validate(string siret);
         /// <summary>
         /// Validation for parameters : socialreason and zipcode
         /// </summary>
         /// <param name="socialreason"></param>
         /// <param name="zipcode"></param>
-        /// <returns>(bool, string) => (params valides ou pas, message d'erreur au cas non valides)</returns>
-        public (bool, string) Validate(string socialreason, string zipcode);
+        /// <returns> True if socialreason and zipcode are valid, false otherwise </returns>
+        public bool Validate(string socialreason, string zipcode);
 
     }
 }
