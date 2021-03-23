@@ -1,5 +1,5 @@
-﻿using Cds.Foundation.Test.Pact.Provider;
-using Cds.TestFormationDotnetcore.Api.Bootstrap;
+﻿using Cds.BusinessCustomer.Api.Bootstrap;
+using Cds.Foundation.Test.Pact.Provider;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Hosting;

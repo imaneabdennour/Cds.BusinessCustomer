@@ -111,10 +111,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.When("the Business Customer API receives the get request with Id:\"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("a Business Customer with the Id : \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
- testRunner.Then("the response status is \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("the Business Customer API receives the get request with Id : \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 7
+ testRunner.Then("the response status is : \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "property",
@@ -146,9 +149,8 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "civility",
                             ""});
-#line 7
- testRunner.And("the Business Customer API sends the information related to the business customer:" +
-                        "", ((string)(null)), table1, "And ");
+#line 8
+ testRunner.And("the Business Customer API sends business customer information :", ((string)(null)), table1, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

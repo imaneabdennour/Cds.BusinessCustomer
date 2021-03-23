@@ -1,7 +1,9 @@
 ﻿using Cds.BusinessCustomer.Api.Bootstrap;
+using Cds.BusinessCustomer.Tests.Bdd.Feature;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Cds.TestFormationDotnetcore.Tests.Bdd
 {
@@ -25,6 +27,8 @@ namespace Cds.TestFormationDotnetcore.Tests.Bdd
                         +6])
                            .AddHttpMessageHandler(() => new GlobalServiceHandler());
                         */
+                        services.AddDefaultHttpClient();
+
 #pragma warning restore S125
                     });
 
