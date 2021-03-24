@@ -28,7 +28,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Feature.feature"
+#line 1 "GetCustomerById.feature"
 #line hidden
         
         public BusinessCustomerByIdFeature(BusinessCustomerByIdFeature.FixtureData fixtureData, Cds_BusinessCustomer_Tests_Bdd_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
@@ -80,15 +80,15 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Get Business Customer by Id")]
+        [Xunit.SkippableFactAttribute(DisplayName="Get Business Customer by ID")]
         [Xunit.TraitAttribute("FeatureTitle", "BusinessCustomerById")]
-        [Xunit.TraitAttribute("Description", "Get Business Customer by Id")]
+        [Xunit.TraitAttribute("Description", "Get Business Customer by ID")]
         [Xunit.TraitAttribute("Category", "BusinessCustomerById")]
-        public virtual void GetBusinessCustomerById()
+        public virtual void GetBusinessCustomerByID()
         {
             string[] tagsOfScenario = new string[] {
                     "BusinessCustomerById"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Business Customer by Id", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Business Customer by ID", null, new string[] {
                         "BusinessCustomerById"});
 #line 4
 this.ScenarioInitialize(scenarioInfo);
@@ -111,13 +111,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given("a Business Customer with the Id : \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Business Customer with the ID \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
- testRunner.When("the Business Customer API receives the get request with Id : \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the Business Customer API receives the get request with ID \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
- testRunner.Then("the response status is : \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the response status is \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "property",
@@ -132,12 +132,6 @@ this.ScenarioInitialize(scenarioInfo);
                             "naf_code",
                             "8299Z"});
                 table1.AddRow(new string[] {
-                            "adress",
-                            "Maarif"});
-                table1.AddRow(new string[] {
-                            "phone",
-                            ""});
-                table1.AddRow(new string[] {
                             "zip_code",
                             "33000"});
                 table1.AddRow(new string[] {
@@ -146,11 +140,8 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "social_reason",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table1.AddRow(new string[] {
-                            "civility",
-                            ""});
 #line 8
- testRunner.And("the Business Customer API sends business customer information :", ((string)(null)), table1, "And ");
+ testRunner.And("the Business Customer API sends business customer information:", ((string)(null)), table1, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
