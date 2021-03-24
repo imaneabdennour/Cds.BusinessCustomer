@@ -16,6 +16,13 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
                 return await client.GetAsync(new Uri(Hooks.WebHostUri, $"/business-customer-information/{id}")).ConfigureAwait(false);
             }
         }
+        public async static Task<HttpResponseMessage> GetBusinessCustomersBySiret(string siret)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                return await client.GetAsync(new Uri(Hooks.WebHostUri, $"/business-customer-information?siret={siret}")).ConfigureAwait(false);
+            }
+        }
 
         public static SingleCustomerViewModel GetCustomerRequestFromTable(Table table)
         {

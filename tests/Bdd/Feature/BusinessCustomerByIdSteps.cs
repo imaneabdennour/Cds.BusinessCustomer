@@ -6,7 +6,6 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
-using Xunit;
 
 namespace Cds.BusinessCustomer.Tests.Bdd.Feature
 {
