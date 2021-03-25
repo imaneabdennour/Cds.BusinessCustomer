@@ -83,13 +83,13 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
         [Xunit.SkippableFactAttribute(DisplayName="Get Business Customer by Siret")]
         [Xunit.TraitAttribute("FeatureTitle", "GetCustomerBySiret")]
         [Xunit.TraitAttribute("Description", "Get Business Customer by Siret")]
-        [Xunit.TraitAttribute("Category", "BusinessCustomerBySirte")]
+        [Xunit.TraitAttribute("Category", "BusinessCustomerBySiret")]
         public virtual void GetBusinessCustomerBySiret()
         {
             string[] tagsOfScenario = new string[] {
-                    "BusinessCustomerBySirte"};
+                    "BusinessCustomerBySiret"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Business Customer by Siret", null, new string[] {
-                        "BusinessCustomerBySirte"});
+                        "BusinessCustomerBySiret"});
 #line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -110,38 +110,78 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 5
- testRunner.Given("a Business Customer with the Siret : \"81999478100022\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 6
- testRunner.When("the Business Customer API receives the get request with Siret : \"81999478100022\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 7
- testRunner.Then("the response status is : \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "property",
                             "value"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "name",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "siret",
                             "81999478100022"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "naf_code",
                             "8299Z"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "zip_code",
                             "33000"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "city",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "social_reason",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-#line 8
- testRunner.And("the Business Customer API sends business customer information :", ((string)(null)), table2, "And ");
+                table5.AddRow(new string[] {
+                            "phone",
+                            "+21268085321"});
+                table5.AddRow(new string[] {
+                            "Adress",
+                            "Maarif"});
+                table5.AddRow(new string[] {
+                            "Civility",
+                            "Marocaine"});
+#line 5
+ testRunner.Given("a Business Customer with the Siret : \"81999478100022\"  and request to CartegieApi" +
+                        " returns :", ((string)(null)), table5, "Given ");
+#line hidden
+#line 16
+ testRunner.When("the Business Customer API receives the get request with Siret : \"81999478100022\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 17
+ testRunner.Then("the response status is : \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "property",
+                            "value"});
+                table6.AddRow(new string[] {
+                            "name",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table6.AddRow(new string[] {
+                            "siret",
+                            "81999478100022"});
+                table6.AddRow(new string[] {
+                            "naf_code",
+                            "8299Z"});
+                table6.AddRow(new string[] {
+                            "zip_code",
+                            "33000"});
+                table6.AddRow(new string[] {
+                            "city",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table6.AddRow(new string[] {
+                            "social_reason",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table6.AddRow(new string[] {
+                            "phone",
+                            "+21268085321"});
+                table6.AddRow(new string[] {
+                            "Adress",
+                            "Maarif"});
+                table6.AddRow(new string[] {
+                            "Civility",
+                            "Marocaine"});
+#line 18
+ testRunner.And("the Business Customer API sends business customer information :", ((string)(null)), table6, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -14,11 +14,11 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
     {
         protected HttpResponseMessage Response { get; set; }
 
-        [Given(@"a Business Customer with the Siret : ""(.*)""")]
-        public void GivenABusinessCustomerWithTheSiret(string siret)
+        [Given(@"a Business Customer with the Siret : ""(.*)""  and request to CartegieApi returns :")]
+        public void GivenABusinessCustomerWithTheSiretAndRequestToCartegieApiReturns(string siret, Table table)
         {
-            //Hooks.mockCartegieApi.Setup(x => x.GetInfosById(It.IsAny<string>())).Returns(SingleTask());
         }
+
 
         [When(@"the Business Customer API receives the get request with Siret : ""(.*)""")]
         public async Task WhenTheBusinessCustomerAPIReceivesTheGetRequestWithSiret(string siret)
@@ -43,7 +43,8 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
 
             actual.Name.Should().Be(expected.Name);
             actual.Siret.Should().Be(expected.Siret);
-            actual.City.Should().Be(expected.City);
+            actual.Phone.Should().Be(expected.Phone);
+            actual.Adress.Should().Be(expected.Adress);
         }
     }
 }

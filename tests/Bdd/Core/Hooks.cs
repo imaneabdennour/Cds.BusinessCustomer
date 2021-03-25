@@ -29,8 +29,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
         /// The web host Uri.
         /// </summary>
         public static readonly Uri WebHostUri = new Uri(Constants.HooksBaseIp);
-
-        public static Mock<ICartegieApi> mockCartegieApi;
+        public static InMemoryCartegieApi TestCartegieApi;
 
         /// <summary>
         /// before feature method
@@ -38,7 +37,8 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
         [BeforeFeature]
         public static void BeforeFeature()
         {
-            mockCartegieApi = new Mock<ICartegieApi>();
+            TestCartegieApi = new InMemoryCartegieApi();
+
 
             _host = Program.ConfigureWebHostBuilder(WebHost.CreateDefaultBuilder())
                 .UseEnvironment(Environments.Development)
@@ -49,7 +49,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
                  })
                 .ConfigureTestServices(services =>
                 {
-                    services.AddScoped<ICartegieApi, CartegieApi>();
+                    services.AddSingleton<ICartegieApi>(TestCartegieApi);
                 })
 
                 .Build();

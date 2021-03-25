@@ -14,13 +14,12 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
     {
         protected HttpResponseMessage Response { get; set; }
 
-        [Given(@"a Business Customer with the ID ""(.*)""")]
-        public void GivenABusinessCustomerWithTheID(string id)
+        [Given(@"a Business Customer with the ID ""(.*)"" and request to CartegieApi returns :")]
+        public void GivenABusinessCustomerWithTheIDNdRequestToCartegieApiReturns(string id, Table table)
         {
-            // mock the behavior of the cartegieApi
-            Hooks.mockCartegieApi.Setup(x => x.GetInfosById(It.IsAny<string>())).Returns(SingleTask());
         }
-        
+
+
         [When(@"the Business Customer API receives the get request with ID ""(.*)""")]
         public async Task WhenTheBusinessCustomerAPIReceivesTheGetRequestWithID(string id)
         {
@@ -44,24 +43,10 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
             var actual = BusinessCustomerHelper.GetCustomerRequestFromResponse(Response);
 
             actual.Name.Should().Be(expected.Name);
-            actual.Siret.Should().Be(expected.Siret);
-            actual.City.Should().Be(expected.City);            
+            actual.Siret.Should().Be(expected.Siret);      
+            actual.Phone.Should().Be(expected.Phone);            
+            actual.Civility.Should().Be(expected.Civility);            
         }
 
-        private Task<CustomerSingleSearchDTO> SingleTask()
-        {
-            return Task.FromResult(new CustomerSingleSearchDTO()
-            {
-                Name = "UBER PARTNER SUPPORT FRANCE SAS",
-                Adress = "Maarif",
-                City = "Casablanca56",
-                Civility = "Marocaine",
-                NafCode = "35678899",
-                Phone = "+21268085321",
-                Siret = "12345",
-                SocialReason = "rs456",
-                ZipCode = "20100"
-            });
-        }
     }
 }

@@ -90,7 +90,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
                     "BusinessCustomerById"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Business Customer by ID", null, new string[] {
                         "BusinessCustomerById"});
-#line 4
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -110,15 +110,6 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 5
- testRunner.Given("a Business Customer with the ID \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 6
- testRunner.When("the Business Customer API receives the get request with ID \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 7
- testRunner.Then("the response status is \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "property",
                             "value"});
@@ -129,19 +120,67 @@ this.ScenarioInitialize(scenarioInfo);
                             "siret",
                             "81999478100022"});
                 table1.AddRow(new string[] {
-                            "naf_code",
+                            "nafCode",
                             "8299Z"});
                 table1.AddRow(new string[] {
-                            "zip_code",
+                            "zipCode",
                             "33000"});
                 table1.AddRow(new string[] {
                             "city",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
                 table1.AddRow(new string[] {
-                            "social_reason",
+                            "socialReason",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-#line 8
- testRunner.And("the Business Customer API sends business customer information:", ((string)(null)), table1, "And ");
+                table1.AddRow(new string[] {
+                            "phone",
+                            "+21268085321"});
+                table1.AddRow(new string[] {
+                            "Adress",
+                            "Maarif"});
+                table1.AddRow(new string[] {
+                            "Civility",
+                            "Marocaine"});
+#line 7
+ testRunner.Given("a Business Customer with the ID \"a40354012\" and request to CartegieApi returns :", ((string)(null)), table1, "Given ");
+#line hidden
+#line 18
+ testRunner.When("the Business Customer API receives the get request with ID \"a40354012\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 19
+ testRunner.Then("the response status is \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "property",
+                            "value"});
+                table2.AddRow(new string[] {
+                            "name",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table2.AddRow(new string[] {
+                            "siret",
+                            "81999478100022"});
+                table2.AddRow(new string[] {
+                            "nafCode",
+                            "8299Z"});
+                table2.AddRow(new string[] {
+                            "zipCode",
+                            "33000"});
+                table2.AddRow(new string[] {
+                            "city",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table2.AddRow(new string[] {
+                            "socialReason",
+                            "UBER PARTNER SUPPORT FRANCE SAS"});
+                table2.AddRow(new string[] {
+                            "phone",
+                            "+21268085321"});
+                table2.AddRow(new string[] {
+                            "Adress",
+                            "Maarif"});
+                table2.AddRow(new string[] {
+                            "Civility",
+                            "Marocaine"});
+#line 20
+ testRunner.And("the Business Customer API sends business customer information:", ((string)(null)), table2, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
