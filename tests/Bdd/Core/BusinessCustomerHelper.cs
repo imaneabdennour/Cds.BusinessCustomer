@@ -1,4 +1,5 @@
 ﻿using Cds.BusinessCustomer.Api.CustomerFeature.ViewModels;
+using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -76,6 +77,20 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
             }
 
             return tableRead;
+        }
+        public static Task<CustomerSingleSearchDTO> GetCustomerDtoFromTable(Table table)
+        {
+            return Task.FromResult(new CustomerSingleSearchDTO()
+            {
+                Name = "UBER PARTNER SUPPORT FRANCE SAS",
+                Adress = "Maarif",
+                Civility = "Marocaine",
+                NafCode = "35678899",
+                Phone = "+21268085321",
+                Siret = "81999478100022",
+                SocialReason = "rs456",
+                ZipCode = "20100"
+            });
         }
 
         //                  *********  Converting from HttpResponseMessage *********

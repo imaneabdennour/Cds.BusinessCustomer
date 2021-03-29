@@ -25,4 +25,9 @@ Scenario: Get Business Customer by Siret
 		| social_reason | UBER PARTNER SUPPORT FRANCE SAS |
 		| phone         | +21268085321                    |
 		| Adress        | Maarif                          |
-		| Civility      | Marocaine                       |	
+		| Civility      | Marocaine                       |
+		
+
+Scenario: Get Business Customer by Invalid Siret 
+	When the Business Customer API receives the get request with Siret : "12345"
+	Then the response status is : "400"
