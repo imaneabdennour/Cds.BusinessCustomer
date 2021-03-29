@@ -1,6 +1,5 @@
 ﻿using Cds.BusinessCustomer.Tests.Bdd.Core;
 using FluentAssertions;
-using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -37,17 +36,14 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
         [Then(@"the Business Customer API sends business customer information  :")]
         public void ThenTheBusinessCustomerAPISendsBusinessCustomerInformation(Table table)
         {
-            // validate the response content 
             var expected = BusinessCustomerHelper.GetCustomersRequestFromTable(table);
             var actual = BusinessCustomerHelper.GetCustomersRequestFromResponse(Response);
 
-            actual[0].Name.Should().Be(expected[0].Name);
-            actual[0].Id.Should().Be(expected[0].Id);
-            actual[0].Adress.Should().Be(expected[0].Adress);
-
-            actual[1].Name.Should().Be(expected[1].Name);
-            actual[1].Id.Should().Be(expected[1].Id);
-            actual[1].Adress.Should().Be(expected[1].Adress);
+            for(int i=0; i<expected.Count; i++) { 
+                actual[i].Name.Should().Be(expected[i].Name);
+                actual[i].Id.Should().Be(expected[i].Id);
+                actual[i].Adress.Should().Be(expected[i].Adress);
+            }           
         }
     }
 }
