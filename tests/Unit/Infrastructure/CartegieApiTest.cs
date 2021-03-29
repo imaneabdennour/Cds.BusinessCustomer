@@ -7,8 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 using FluentAssertions;
-using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
-using System;
+using System.IO;
 
 namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 {
@@ -19,7 +18,7 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 
         public CartegieApiTest()
         {
-            // It's easy to a real config, instead of mocking it :
+            // It's easy to use a real config, instead of mocking it :
             config = new CartegieConfiguration { BaseUrl = "https://6037a3775435040017722f92.mockapi.io/api/v1/Company/" };
             mockFactory = new Mock<IHttpClientFactory>();
         }
@@ -175,17 +174,15 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 
         private StringContent Response(string type)
         {
-            if (type.Equals("Single"))
-                return new StringContent("[{'adresse1': 'UBER PARTNER SUPPORT FRANCE SAS','siret':'81999478100022','apen700':'81999478100022'," +
-                    "'adresse4':'81999478100022'}]");
+            if (type.Equals("Single"))           
+                return new StringContent(File.ReadAllText("../../../SingleCartegieResponse.json"), System.Text.Encoding.UTF8, "application/json");
+             
             if (type.Equals("Multiple"))
-                return new StringContent("[{'adresse1': 'UBER PARTNER SUPPORT FRANCE SAS','siret':'81999478100022','apen700':'81999478100022'," +
-                    "'adresse4':'81999478100022'}, {'adresse1': 'UBER PARTNER SUPPORT FRANCE SAS','siret':'81999478100022','apen700':'81999478100022'," +
-                    "'adresse4':'81999478100022'}]");
+                return new StringContent(File.ReadAllText("../../../MultipleCartegieResponse.json"), System.Text.Encoding.UTF8, "application/json");
 
-            return new StringContent("[{}]");
+            return new StringContent(File.ReadAllText("../../../EmptyCartegieResponse.json"), System.Text.Encoding.UTF8, "application/json");
         }
 
-        
+
     }
 }

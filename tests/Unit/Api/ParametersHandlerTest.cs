@@ -22,7 +22,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
         {
             // Arrange            
 
-            // Arrange
+            // Act
             var actual = paramsHandler.Validate("12345678945786");
 
             // Assert
@@ -34,7 +34,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
         {
             // Arrange
 
-            // Arrange
+            // Act
             var actual1 = paramsHandler.Validate("123456");
             var actual2 = paramsHandler.Validate("");
 

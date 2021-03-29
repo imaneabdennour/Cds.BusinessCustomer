@@ -110,32 +110,6 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Name",
-                            "Adress",
-                            "Id",
-                            "SocialReason"});
-                table3.AddRow(new string[] {
-                            "Electroplanet",
-                            "Maarif",
-                            "1254",
-                            "rs154"});
-                table3.AddRow(new string[] {
-                            "Jumia",
-                            "Derb Omar",
-                            "78945",
-                            "rs7864"});
-#line 5
- testRunner.Given("a Business Customer with the socialreason : \"123\" and zipcode : \"456\" and request" +
-                        " to CartegieApi returns :", ((string)(null)), table3, "Given ");
-#line hidden
-#line 9
- testRunner.When("the Business Customer API receives the get request with socialreason : \"a40354012" +
-                        "\" and zipcode : \"456\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 10
- testRunner.Then("the response status is:\"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Adress",
@@ -151,8 +125,34 @@ this.ScenarioInitialize(scenarioInfo);
                             "Derb Omar",
                             "78945",
                             "rs7864"});
+#line 5
+ testRunner.Given("a Business Customer with the socialreason : \"123\" and zipcode : \"456\" and request" +
+                        " to CartegieApi returns :", ((string)(null)), table4, "Given ");
+#line hidden
+#line 9
+ testRunner.When("the Business Customer API receives the get request with socialreason : \"a40354012" +
+                        "\" and zipcode : \"456\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 10
+ testRunner.Then("the response status is:\"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Adress",
+                            "Id",
+                            "SocialReason"});
+                table5.AddRow(new string[] {
+                            "Electroplanet",
+                            "Maarif",
+                            "1254",
+                            "rs154"});
+                table5.AddRow(new string[] {
+                            "Jumia",
+                            "Derb Omar",
+                            "78945",
+                            "rs7864"});
 #line 11
- testRunner.And("the Business Customer API sends business customer information  :", ((string)(null)), table4, "And ");
+ testRunner.And("the Business Customer API sends business customer information  :", ((string)(null)), table5, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -229,6 +229,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 22
  testRunner.Then("the response status is:\"400\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Get Business Customer by Inexistant SocialReason and ZipCode")]
+        [Xunit.TraitAttribute("FeatureTitle", "GetCustomerByMultiplefeature")]
+        [Xunit.TraitAttribute("Description", "Get Business Customer by Inexistant SocialReason and ZipCode")]
+        public virtual void GetBusinessCustomerByInexistantSocialReasonAndZipCode()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Business Customer by Inexistant SocialReason and ZipCode", null, ((string[])(null)));
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Adress",
+                            "Id",
+                            "SocialReason"});
+#line 25
+ testRunner.Given("a Business Customer with the socialreason : \"1\" and zipcode : \"2\" and request to " +
+                        "CartegieApi returns :", ((string)(null)), table6, "Given ");
+#line hidden
+#line 27
+ testRunner.When("the Business Customer API receives the get request with socialreason : \"1\" and zi" +
+                        "pcode : \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 28
+ testRunner.Then("the response status is:\"404\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

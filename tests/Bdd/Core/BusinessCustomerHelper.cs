@@ -72,7 +72,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
                     Name = item["Name"], 
                     Adress = item["Adress"], 
                     Id = item["Id"], 
-                    SocialReason = item["Id"]
+                    SocialReason = item["SocialReason"]
                 });
             }
 

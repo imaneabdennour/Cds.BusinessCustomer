@@ -17,6 +17,8 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
         [Given(@"a Business Customer with the Siret : ""(.*)""  and request to CartegieApi returns :")]
         public void GivenABusinessCustomerWithTheSiretAndRequestToCartegieApiReturns(string siret, Table table)
         {
+            // Mock response from cartegie api = table :
+            new InMemoryCartegieApi(table);
         }
 
 

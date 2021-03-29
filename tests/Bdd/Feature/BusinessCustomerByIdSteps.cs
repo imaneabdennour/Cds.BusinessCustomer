@@ -17,6 +17,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
         [Given(@"a Business Customer with the ID ""(.*)"" and request to CartegieApi returns :")]
         public void GivenABusinessCustomerWithTheIDNdRequestToCartegieApiReturns(string id, Table table)
         {
+            new InMemoryCartegieApi(table);
         }
 
 

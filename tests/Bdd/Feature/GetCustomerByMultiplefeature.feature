@@ -20,3 +20,9 @@ Scenario: Get Business Customer by SocialReason and invalid ZipCode
 Scenario: Get Business Customer by invalid SocialReason and ZipCode
 	When the Business Customer API receives the get request with socialreason : "" and zipcode : "123456"
 	Then the response status is:"400"
+
+Scenario: Get Business Customer by Inexistant SocialReason and ZipCode 
+	Given a Business Customer with the socialreason : "1" and zipcode : "2" and request to CartegieApi returns :
+		| Name          | Adress    | Id    | SocialReason |		
+	When the Business Customer API receives the get request with socialreason : "1" and zipcode : "2"
+	Then the response status is:"404"

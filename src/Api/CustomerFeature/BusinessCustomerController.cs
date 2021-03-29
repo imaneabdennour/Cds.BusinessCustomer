@@ -53,8 +53,10 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
         {
             try
             {
-                // recherche par siret :
-                if (!IsNullOrEmpty(siret))
+                if (string.IsNullOrEmpty(socialReason) && string.IsNullOrEmpty(zipCode) && string.IsNullOrEmpty(siret))
+                    throw new ArgumentNullException(null, "You should enter non null Siret OR SocialReason and ZipCode");
+
+                if (!string.IsNullOrEmpty(siret))
                 {
                     var isValid = _handler.Validate(siret);
                     if (!isValid)
@@ -68,8 +70,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                     return Ok(response.ToViewModel());    
                 }
 
-                // recherche par raison sociale et code postal :
-                else if(!IsNullOrEmpty(socialReason) || !IsNullOrEmpty(zipCode))
+                else if(!string.IsNullOrEmpty(zipCode) || !string.IsNullOrEmpty(socialReason))
                 {
                     var isValid = _handler.Validate(socialReason, zipCode);
                     if (!isValid)
@@ -83,11 +84,17 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
 
                     return Ok(response.ToViewModel());    
                 }
-                // aucun des params n'est rentré :
+
                 else
                 {
-                    throw new BadRequestException("You should enter Siret OR SocialReason and ZipCode");
+                    throw new BadRequestException("You should enter valid Siret OR SocialReason and ZipCode");
                 }
+            }
+            catch (ArgumentNullException e)
+            {
+                _logger.LogError($"ArgumentNullException : {e.Message}");
+                return new BadRequestError(e.Message).Result;
+
             }
             catch (BadRequestException e)
             {
@@ -122,7 +129,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                 CustomerSingleSearchDTO response = await _service.GetInfosById(Id);
                 if (response == null)
                 {
-                    throw new NotFoundException("There is no such business customer with such id");      //404      
+                    throw new NotFoundException("There is no such business customer with such id");           
                 }
                 return Ok(response.ToViewModel());
             }
@@ -134,16 +141,10 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
             catch (Exception)
             {
                 _logger.LogError("Failed to retreive customer - Internal Server Error");
-                return StatusCode(500);     //500
+                return StatusCode(500);     
             }
         }
-
-        private static bool IsNullOrEmpty(string s)
-        {
-            if (s == null || s == "")
-                return true;
-            return false;
-        }
+       
 
         ///// <summary>
         ///// Health check for : HTTP

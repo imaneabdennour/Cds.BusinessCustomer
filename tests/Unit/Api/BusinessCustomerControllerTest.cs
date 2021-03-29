@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -40,7 +41,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             // Assert
             resById.Should().NotBeNull();
             resById.Result.Should().NotBeNull();
-            (resById.Result as ObjectResult).StatusCode.Should().Be(200);
+            (resById.Result as ObjectResult).StatusCode.Should().Be((int)HttpStatusCode.OK);
         }
 
         [Fact]
@@ -58,7 +59,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             // Assert
             resBySiret.Should().NotBeNull();
             resBySiret.Result.Should().NotBeNull();
-            (resBySiret.Result as ObjectResult).StatusCode.Should().Be(200);
+            (resBySiret.Result as ObjectResult).StatusCode.Should().Be((int)HttpStatusCode.OK);
         }
 
         [Fact]
@@ -76,7 +77,7 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             // Assert
             res.Should().NotBeNull();
             res.Result.Should().NotBeNull();
-            (res.Result as ObjectResult).StatusCode.Should().Be(200);
+            (res.Result as ObjectResult).StatusCode.Should().Be((int)HttpStatusCode.OK);
         }
 
        

@@ -4,58 +4,73 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow;
 
 namespace Cds.BusinessCustomer.Tests.Bdd.Core
 {
     public class InMemoryCartegieApi : ICartegieApi
     {
+        public static Table Table { get; set; }
+        
         public InMemoryCartegieApi() { }
+        public InMemoryCartegieApi(Table table) {
+            Table = table;
+        }
+
         public Task<List<CustomerMultipleSearchDTO>> GetInfosByCriteria(string socialReason, string zipCode)
         {
-            return Task.FromResult(new List<CustomerMultipleSearchDTO>()
+            if(Table.Rows.Count == 0)
+                return Task.FromResult<List<CustomerMultipleSearchDTO>>(null);
+
+            var tableRead = new List<CustomerMultipleSearchDTO>();
+            foreach (var item in Table.Rows)
             {
-                new CustomerMultipleSearchDTO {
-                    Name = "Electroplanet",
-                    Adress = "Maarif",
-                    Id = "1254",
-                    SocialReason = "rs154"
-                },
-                new CustomerMultipleSearchDTO {
-                    Name = "Jumia",
-                    Adress = "Derb Omar",
-                    Id = "78945",
-                    SocialReason = "rs184"
-                }
-            });
+                tableRead.Add(new CustomerMultipleSearchDTO
+                {
+                    Name = item["Name"],
+                    Adress = item["Adress"],
+                    Id = item["Id"],
+                    SocialReason = item["SocialReason"]
+                });
+            }
+            return Task.FromResult(tableRead);
         }
 
         public Task<CustomerSingleSearchDTO> GetInfosById(string id)
         {
+            if (Table.Rows.Count == 0)
+                return Task.FromResult<CustomerSingleSearchDTO>(null);
+
             return Task.FromResult(new CustomerSingleSearchDTO()
             {
-                Name = "UBER PARTNER SUPPORT FRANCE SAS",
-                Adress = "Maarif",
-                Civility = "Marocaine",
-                NafCode = "35678899",
-                Phone = "+21268085321",
-                Siret = "81999478100022",
-                SocialReason = "rs456",
-                ZipCode = "20100"
+                Name = Table.Rows[0][1],
+                Siret = Table.Rows[1][1],
+                NafCode = Table.Rows[2][1],
+                ZipCode = Table.Rows[3][1],
+                City = Table.Rows[4][1],
+                SocialReason = Table.Rows[5][1],
+                Phone = Table.Rows[6][1],
+                Adress = Table.Rows[7][1],
+                Civility = Table.Rows[8][1]
             });
         }
 
         public Task<CustomerSingleSearchDTO> GetInfosBySiret(string siret)
         {
+            if (Table.Rows.Count == 0)
+                return Task.FromResult<CustomerSingleSearchDTO>(null);
+
             return Task.FromResult(new CustomerSingleSearchDTO()
             {
-                Name = "UBER PARTNER SUPPORT FRANCE SAS",
-                Adress = "Maarif",
-                Civility = "Marocaine",
-                NafCode = "35678899",
-                Phone = "+21268085321",
-                Siret = "81999478100022",
-                SocialReason = "rs456",
-                ZipCode = "20100"
+                Name = Table.Rows[0][1],
+                Siret = Table.Rows[1][1],
+                NafCode = Table.Rows[2][1],
+                ZipCode = Table.Rows[3][1],
+                City = Table.Rows[4][1],
+                SocialReason = Table.Rows[5][1],
+                Phone = Table.Rows[6][1],
+                Adress = Table.Rows[7][1],
+                Civility = Table.Rows[8][1]
             });
         }
 

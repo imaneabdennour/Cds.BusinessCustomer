@@ -16,6 +16,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
         [Given(@"a Business Customer with the socialreason : ""(.*)"" and zipcode : ""(.*)"" and request to CartegieApi returns :")]
         public void GivenABusinessCustomerWithTheSocialreasonAndZipcodeAndRequestToCartegieApiReturns(string socialReason, string zipCode, Table table)
         {
+            new InMemoryCartegieApi(table);
         }
 
         [When(@"the Business Customer API receives the get request with socialreason : ""(.*)"" and zipcode : ""(.*)""")]

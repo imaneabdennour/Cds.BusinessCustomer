@@ -110,39 +110,39 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "property",
                             "value"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "name",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "siret",
                             "81999478100022"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "naf_code",
                             "8299Z"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "zip_code",
                             "33000"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "city",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "social_reason",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "phone",
                             "+21268085321"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Adress",
                             "Maarif"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Civility",
                             "Marocaine"});
 #line 5
  testRunner.Given("a Business Customer with the Siret : \"81999478100022\"  and request to CartegieApi" +
-                        " returns :", ((string)(null)), table5, "Given ");
+                        " returns :", ((string)(null)), table7, "Given ");
 #line hidden
 #line 16
  testRunner.When("the Business Customer API receives the get request with Siret : \"81999478100022\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -150,38 +150,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 17
  testRunner.Then("the response status is : \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "property",
                             "value"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "name",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "siret",
                             "81999478100022"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "naf_code",
                             "8299Z"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "zip_code",
                             "33000"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "city",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "social_reason",
                             "UBER PARTNER SUPPORT FRANCE SAS"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "phone",
                             "+21268085321"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Adress",
                             "Maarif"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Civility",
                             "Marocaine"});
 #line 18
- testRunner.And("the Business Customer API sends business customer information :", ((string)(null)), table6, "And ");
+ testRunner.And("the Business Customer API sends business customer information :", ((string)(null)), table8, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -219,6 +219,50 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 33
  testRunner.Then("the response status is : \"400\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Get Business Customer by Inexistant Siret")]
+        [Xunit.TraitAttribute("FeatureTitle", "GetCustomerBySiret")]
+        [Xunit.TraitAttribute("Description", "Get Business Customer by Inexistant Siret")]
+        public virtual void GetBusinessCustomerByInexistantSiret()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Business Customer by Inexistant Siret", null, ((string[])(null)));
+#line 35
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "property",
+                            "value"});
+#line 36
+testRunner.Given("a Business Customer with the Siret : \"12345\"  and request to CartegieApi returns " +
+                        ":", ((string)(null)), table9, "Given ");
+#line hidden
+#line 38
+ testRunner.When("the Business Customer API receives the get request with Siret : \"78945612345129\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 39
+ testRunner.Then("the response status is : \"404\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

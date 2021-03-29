@@ -28,3 +28,9 @@ Scenario: Get Business Customer by ID
 		| phone         | +21268085321                    |
 		| Adress        | Maarif                          |
 		| Civility      | Marocaine                       |
+
+Scenario: Get Business Customer by Inexistant Id 
+	Given a Business Customer with the ID "fze486" and request to CartegieApi returns :
+		| property      | value                           |		
+	When the Business Customer API receives the get request with ID "fze486"
+	Then the response status is "404"

@@ -31,3 +31,9 @@ Scenario: Get Business Customer by Siret
 Scenario: Get Business Customer by Invalid Siret 
 	When the Business Customer API receives the get request with Siret : "12345"
 	Then the response status is : "400"
+
+Scenario: Get Business Customer by Inexistant Siret 
+Given a Business Customer with the Siret : "12345"  and request to CartegieApi returns :
+		| property      | value                           |		
+	When the Business Customer API receives the get request with Siret : "78945612345129"
+	Then the response status is : "404"
