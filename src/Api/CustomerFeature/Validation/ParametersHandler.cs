@@ -1,8 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Cds.BusinessCustomer.Domain.CustomerAggregate;
+using Microsoft.Extensions.Logging;
 
 namespace Cds.BusinessCustomer.Api.CustomerFeature.Validation
 {
@@ -29,7 +26,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Validation
         /// <returns></returns>
         public bool Validate(string siret)
         {
-            if (siret.Length != Constants.SiretRequiredLength)
+            if (string.IsNullOrEmpty(siret) || siret.Length != Constants.SiretRequiredLength)
             {
                 _logger.LogError($"Failed to retreive customer with siret = {siret}, Siret string should be of length {Constants.SiretRequiredLength}");
                 return false;

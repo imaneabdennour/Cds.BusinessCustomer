@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>Cds.TestFormationDotnetcore.Tests.Pact.Consumer</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Test</ProjectType>
+  <ProjectGuid>689b1008-26da-42e6-9c35-70d33a7e59f7</ProjectGuid>
+  <FullPath>C:\Users\imane.abdennour\Desktop\test-formation-dotnetcore\test-formation-dotnetcore\tests\Pact\Consumer\Cds.TestFormationDotnetcore.Tests.Pact.Consumer.csproj</FullPath>
+  <IsExcluded>true</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Cds.BusinessCustomer\.sonarqube\conf\2\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings />
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+</ProjectInfo>

@@ -10,12 +10,12 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
 {
     public class CustomerExtensionTest
     {
-        CustomerSingleSearchDTO singleInput;
-        List<CustomerMultipleSearchDTO> multipleInput;
+        readonly CustomerSingleSearchDto singleInput;
+        readonly List<CustomerMultipleSearchDto> multipleInput;
 
         public CustomerExtensionTest()
         {
-            singleInput = new CustomerSingleSearchDTO
+            singleInput = new CustomerSingleSearchDto
             {
                 Name = "Imane",
                 Adress = "Maarif",
@@ -28,15 +28,15 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
                 ZipCode = "20100"
             };
 
-            multipleInput = new List<CustomerMultipleSearchDTO>()
+            multipleInput = new List<CustomerMultipleSearchDto>()
             {
-                new CustomerMultipleSearchDTO {
+                new CustomerMultipleSearchDto {
                     Name = "Imane",
                     Adress = "Maarif",
                     Id = "1254",
                     SocialReason = "rs154"
                 },
-                new CustomerMultipleSearchDTO {
+                new CustomerMultipleSearchDto {
                     Name = "Assia",
                     Adress = "Maarif",
                     Id = "1546",

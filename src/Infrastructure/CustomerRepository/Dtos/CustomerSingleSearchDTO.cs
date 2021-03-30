@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Cds.BusinessCustomer.Domain.CustomerAggregate;
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos
@@ -7,8 +8,13 @@ namespace Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos
     /// Solution to not expose my Customer objects 
     /// Exposed when searching by single param
     /// </summary>
-    public class CustomerSingleSearchDTO
+    public class CustomerSingleSearchDto
     {
+        /// <summary>
+        /// Siret Required Length
+        /// </summary>
+        private const int SiretLength = Constants.SiretRequiredLength;
+
         /// <summary>
         /// Name
         /// </summary>
@@ -19,7 +25,7 @@ namespace Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos
         /// Siret
         /// </summary>
         [JsonProperty("siret")]
-        [MaxLength(14), MinLength(14)]
+        [MaxLength(SiretLength), MinLength(SiretLength)]
         public string Siret { get; set; }
 
         /// <summary>

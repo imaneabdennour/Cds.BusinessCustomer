@@ -7,7 +7,7 @@ namespace Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos
         /// <summary>
         /// Exposed when searching by multiple params
         /// </summary>
-        public class CustomerMultipleSearchDTO
+        public class CustomerMultipleSearchDto
         {
             /// <summary>
             /// Id

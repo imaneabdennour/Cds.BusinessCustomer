@@ -4,10 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
@@ -78,9 +75,9 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
 
             return tableRead;
         }
-        public static Task<CustomerSingleSearchDTO> GetCustomerDtoFromTable(Table table)
+        public static Task<CustomerSingleSearchDto> GetCustomerDtoFromTable(Table table)
         {
-            return Task.FromResult(new CustomerSingleSearchDTO()
+            return Task.FromResult(new CustomerSingleSearchDto
             {
                 Name = "UBER PARTNER SUPPORT FRANCE SAS",
                 Adress = "Maarif",

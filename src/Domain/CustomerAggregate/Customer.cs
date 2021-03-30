@@ -1,4 +1,5 @@
 
+using Cds.BusinessCustomer.Domain.CustomerAggregate;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cds.BusinessCustomer.Domain.ItemAggregate
@@ -8,10 +9,16 @@ namespace Cds.BusinessCustomer.Domain.ItemAggregate
     /// </summary>
     public class Customer
         {
-            /// <summary>
-            /// Id
-            /// </summary>
-            public string Id { get; set; }
+
+        /// <summary>
+        /// Siret Required Length
+        /// </summary>
+        private const int SiretLength = Constants.SiretRequiredLength;
+
+        /// <summary>
+        /// Id
+        /// </summary>
+        public string Id { get; set; }
 
             /// <summary>
             /// Name
@@ -27,7 +34,7 @@ namespace Cds.BusinessCustomer.Domain.ItemAggregate
             /// <summary>
             /// Siret
             /// </summary>
-            [MaxLength(14), MinLength(14)]
+            [MaxLength(SiretLength), MinLength(SiretLength)]
             public string Siret { get; set; }
 
             /// <summary>

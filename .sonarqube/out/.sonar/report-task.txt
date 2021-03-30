@@ -1,0 +1,6 @@
+projectKey=MongoDBWebAPI_Scan_3
+serverUrl=http://localhost:9000
+serverVersion=8.7.1.42226
+dashboardUrl=http://localhost:9000/dashboard?id=MongoDBWebAPI_Scan_3
+ceTaskId=AXiDvqAXA_JTZJWmWiVp
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXiDvqAXA_JTZJWmWiVp

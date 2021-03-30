@@ -1,0 +1,16 @@
+=
+4C:\Cds.BusinessCustomer\src\Api\Bootstrap\Program.csutf-8=
+4C:\Cds.BusinessCustomer\src\Api\Bootstrap\Startup.csutf-8V
+MC:\Cds.BusinessCustomer\src\Api\CustomerFeature\BusinessCustomerController.csutf-8M
+DC:\Cds.BusinessCustomer\src\Api\CustomerFeature\CustomerExtension.csutf-8R
+IC:\Cds.BusinessCustomer\src\Api\CustomerFeature\Errors\BadRequestError.csutf-8P
+GC:\Cds.BusinessCustomer\src\Api\CustomerFeature\Errors\NotFoundError.csutf-8Z
+QC:\Cds.BusinessCustomer\src\Api\CustomerFeature\Exceptions\BadRequestException.csutf-8X
+OC:\Cds.BusinessCustomer\src\Api\CustomerFeature\Exceptions\NotFoundException.csutf-8Y
+PC:\Cds.BusinessCustomer\src\Api\CustomerFeature\Validation\IParametersHandler.csutf-8X
+OC:\Cds.BusinessCustomer\src\Api\CustomerFeature\Validation\ParametersHandler.csutf-8a
+XC:\Cds.BusinessCustomer\src\Api\CustomerFeature\ViewModels\MultipleCustomersViewModel.csutf-8^
+UC:\Cds.BusinessCustomer\src\Api\CustomerFeature\ViewModels\SingleCustomerViewModel.csutf-8q
+fC:\Cds.BusinessCustomer\src\Api\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.csutf-8k
+`C:\Cds.BusinessCustomer\src\Api\obj\Debug\netcoreapp3.1\Cds.BusinessCustomer.Api.AssemblyInfo.csutf-8~
+sC:\Cds.BusinessCustomer\src\Api\obj\Debug\netcoreapp3.1\Cds.BusinessCustomer.Api.MvcApplicationPartsAssemblyInfo.csutf-8

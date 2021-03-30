@@ -1,5 +1,4 @@
 ﻿using Cds.BusinessCustomer.Api.CustomerFeature;
-using Cds.BusinessCustomer.Api.CustomerFeature.Exceptions;
 using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
@@ -81,9 +80,9 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
         }
 
        
-        private Task<CustomerSingleSearchDTO> SingleTask()
+        private Task<CustomerSingleSearchDto> SingleTask()
         {
-            return Task.FromResult(new CustomerSingleSearchDTO()
+            return Task.FromResult(new CustomerSingleSearchDto()
             {
                 Name = "Imane",
                 Adress = "Maarif",
@@ -96,17 +95,17 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
                 ZipCode = "20100"
             });
         }
-        private Task<List<CustomerMultipleSearchDTO>> MultipleTask()
+        private Task<List<CustomerMultipleSearchDto>> MultipleTask()
         {
-            return Task.FromResult(new List<CustomerMultipleSearchDTO>()
+            return Task.FromResult(new List<CustomerMultipleSearchDto>()
             {
-                new CustomerMultipleSearchDTO {
+                new CustomerMultipleSearchDto {
                     Name = "Imane",
                     Adress = "Maarif",
                     Id = "1254",
                     SocialReason = "rs154"
                 },
-                new CustomerMultipleSearchDTO {
+                new CustomerMultipleSearchDto {
                     Name = "Assia",
                     Adress = "Maarif",
                     Id = "1546",
@@ -115,9 +114,9 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
             });
         }
 
-        private Task<CustomerSingleSearchDTO> EmptyTask()
+        private Task<CustomerSingleSearchDto> EmptyTask()
         {
-            return Task.FromResult<CustomerSingleSearchDTO>(null);
+            return Task.FromResult<CustomerSingleSearchDto>(null);
         }
 
     }

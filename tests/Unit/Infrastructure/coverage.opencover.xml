@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession>
+  <Summary numSequencePoints="150" visitedSequencePoints="99" numBranchPoints="44" visitedBranchPoints="30" sequenceCoverage="66" branchCoverage="68.18" maxCyclomaticComplexity="64" minCyclomaticComplexity="10" visitedClasses="6" numClasses="8" visitedMethods="10" numMethods="37" />
+  <Modules>
+    <Module hash="E5E4E24D-5A08-4481-ABB2-74EA495AF6E8">
+      <ModulePath>Cds.BusinessCustomer.Domain.dll</ModulePath>
+      <ModuleTime>2021-03-30T12:55:00</ModuleTime>
+      <ModuleName>Cds.BusinessCustomer.Domain</ModuleName>
+      <Files>
+        <File uid="1" fullPath="C:\Cds.BusinessCustomer\src\Domain\CustomerAggregate\Customer.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="10" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="10" />
+          <FullName>Cds.BusinessCustomer.Domain.ItemAggregate.Customer</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_Id()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="14" ec="1" el="14" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_Name()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="19" ec="1" el="19" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_Adress()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="24" ordinal="0" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="24" ec="1" el="24" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_Siret()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="31" ordinal="0" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="31" ec="1" el="31" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_NafCode()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="36" ordinal="0" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="36" ec="1" el="36" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_Phone()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="41" ordinal="0" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="41" ec="1" el="41" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_ZipCode()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="46" ordinal="0" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="46" ec="1" el="46" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_City()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="51" ordinal="0" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="7" offset="7" sc="0" sl="51" ec="1" el="51" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_SocialReason()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="56" ordinal="0" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="8" offset="8" sc="0" sl="56" ec="1" el="56" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Domain.ItemAggregate.Customer::get_Civility()</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="61" ordinal="0" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="9" offset="9" sc="0" sl="61" ec="1" el="61" bec="0" bev="0" fileid="1" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+    <Module hash="ACD0D263-C9E3-437C-AF31-45BF2ADAA778">
+      <ModulePath>Cds.BusinessCustomer.Infrastructure.dll</ModulePath>
+      <ModuleTime>2021-03-30T12:55:00</ModuleTime>
+      <ModuleName>Cds.BusinessCustomer.Infrastructure</ModuleName>
+      <Files>
+        <File uid="2" fullPath="C:\Cds.BusinessCustomer\src\Infrastructure\CustomerRepository\Dtos\CustomerMultipleSearchDTO.cs" />
+        <File uid="3" fullPath="C:\Cds.BusinessCustomer\src\Infrastructure\CustomerRepository\Dtos\CustomerSingleSearchDTO.cs" />
+        <File uid="4" fullPath="C:\Cds.BusinessCustomer\src\Infrastructure\CartegieApi.cs" />
+        <File uid="5" fullPath="C:\Cds.BusinessCustomer\src\Infrastructure\CartegieConfiguration.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="4" />
+          <FullName>Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerMultipleSearchDTO</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerMultipleSearchDTO::get_Id()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="17" ordinal="0" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="17" ec="1" el="17" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerMultipleSearchDTO::get_Name()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="23" ordinal="0" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="23" ec="1" el="23" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerMultipleSearchDTO::get_Adress()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="29" ec="1" el="29" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerMultipleSearchDTO::get_SocialReason()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="35" ordinal="0" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="35" ec="1" el="35" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="9" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="11.11" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="9" />
+          <FullName>Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_Name()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="16" ordinal="0" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="16" ec="1" el="16" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_Siret()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="23" ordinal="0" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="23" ec="1" el="23" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_NafCode()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="29" ec="1" el="29" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_Adress()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="35" ordinal="0" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="35" ec="1" el="35" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_ZipCode()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="41" ordinal="0" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="41" ec="1" el="41" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_City()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="47" ordinal="0" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="47" ec="1" el="47" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_SocialReason()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="53" ordinal="0" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="6" offset="6" sc="0" sl="53" ec="1" el="53" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_Civility()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="59" ordinal="0" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="7" offset="7" sc="0" sl="59" ec="1" el="59" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO::get_Phone()</Name>
+              <FileRef uid="3" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="65" ordinal="0" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="3" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="8" offset="8" sc="0" sl="65" ec="1" el="65" bec="0" bev="0" fileid="3" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="50" visitedSequencePoints="44" numBranchPoints="22" visitedBranchPoints="16" sequenceCoverage="88" branchCoverage="72.72" maxCyclomaticComplexity="8" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="5" numMethods="5" />
+          <FullName>Cds.TestFormationDotnetcore.Infrastructure.CartegieApi</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="4" nPathComplexity="0" sequenceCoverage="91.66" branchCoverage="75" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="12" visitedSequencePoints="11" numBranchPoints="4" visitedBranchPoints="3" sequenceCoverage="91.66" branchCoverage="75" maxCyclomaticComplexity="4" minCyclomaticComplexity="4" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Threading.Tasks.Task`1&lt;Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO&gt; Cds.TestFormationDotnetcore.Infrastructure.CartegieApi::GetInfosById(System.String)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="3" uspid="35" ordinal="0" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="3" uspid="37" ordinal="1" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="3" uspid="38" ordinal="2" sl="38" sc="1" el="38" ec="2" bec="2" bev="2" fileid="4" />
+                <SequencePoint vc="2" uspid="39" ordinal="3" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="41" ordinal="4" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="42" ordinal="5" sl="42" sc="1" el="42" ec="2" bec="2" bev="1" fileid="4" />
+                <SequencePoint vc="0" uspid="43" ordinal="6" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="45" ordinal="7" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="47" ordinal="8" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="48" ordinal="9" sl="48" sc="1" el="48" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="49" ordinal="10" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="3" uspid="51" ordinal="11" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="2" uspid="38" ordinal="0" path="0" offset="10" offsetend="12" sl="38" fileid="4" />
+                <BranchPoint vc="1" uspid="38" ordinal="1" path="1" offset="10" offsetend="18" sl="38" fileid="4" />
+                <BranchPoint vc="0" uspid="42" ordinal="2" path="0" offset="37" offsetend="39" sl="42" fileid="4" />
+                <BranchPoint vc="1" uspid="42" ordinal="3" path="1" offset="37" offsetend="45" sl="42" fileid="4" />
+              </BranchPoints>
+              <MethodPoint vc="11" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="35" ec="1" el="51" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="6" nPathComplexity="0" sequenceCoverage="91.66" branchCoverage="83.33" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="12" visitedSequencePoints="11" numBranchPoints="6" visitedBranchPoints="5" sequenceCoverage="91.66" branchCoverage="83.33" maxCyclomaticComplexity="6" minCyclomaticComplexity="6" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Threading.Tasks.Task`1&lt;Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO&gt; Cds.TestFormationDotnetcore.Infrastructure.CartegieApi::GetInfosBySiret(System.String)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="4" uspid="59" ordinal="0" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="4" uspid="61" ordinal="1" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="4" uspid="62" ordinal="2" sl="62" sc="1" el="62" ec="2" bec="4" bev="4" fileid="4" />
+                <SequencePoint vc="3" uspid="63" ordinal="3" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="65" ordinal="4" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="66" ordinal="5" sl="66" sc="1" el="66" ec="2" bec="2" bev="1" fileid="4" />
+                <SequencePoint vc="0" uspid="67" ordinal="6" sl="67" sc="1" el="67" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="69" ordinal="7" sl="69" sc="1" el="69" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="3" uspid="71" ordinal="8" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="3" uspid="72" ordinal="9" sl="72" sc="1" el="72" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="3" uspid="73" ordinal="10" sl="73" sc="1" el="73" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="4" uspid="75" ordinal="11" sl="75" sc="1" el="75" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="2" uspid="62" ordinal="0" path="0" offset="8" offsetend="10" sl="62" fileid="4" />
+                <BranchPoint vc="2" uspid="62" ordinal="1" path="1" offset="8" offsetend="25" sl="62" fileid="4" />
+                <BranchPoint vc="3" uspid="62" ordinal="2" path="0" offset="28" offsetend="30" sl="62" fileid="4" />
+                <BranchPoint vc="1" uspid="62" ordinal="3" path="1" offset="28" offsetend="36" sl="62" fileid="4" />
+                <BranchPoint vc="0" uspid="66" ordinal="4" path="0" offset="55" offsetend="57" sl="66" fileid="4" />
+                <BranchPoint vc="1" uspid="66" ordinal="5" path="1" offset="55" offsetend="63" sl="66" fileid="4" />
+              </BranchPoints>
+              <MethodPoint vc="11" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="59" ec="1" el="75" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="8" nPathComplexity="0" sequenceCoverage="91.66" branchCoverage="75" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="12" visitedSequencePoints="11" numBranchPoints="8" visitedBranchPoints="6" sequenceCoverage="91.66" branchCoverage="75" maxCyclomaticComplexity="8" minCyclomaticComplexity="8" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Threading.Tasks.Task`1&lt;System.Collections.Generic.List`1&lt;Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerMultipleSearchDTO&gt;&gt; Cds.TestFormationDotnetcore.Infrastructure.CartegieApi::GetInfosByCriteria(System.String,System.String)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="5" uspid="84" ordinal="0" sl="84" sc="1" el="84" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="5" uspid="86" ordinal="1" sl="86" sc="1" el="86" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="5" uspid="87" ordinal="2" sl="87" sc="1" el="87" ec="2" bec="4" bev="4" fileid="4" />
+                <SequencePoint vc="4" uspid="88" ordinal="3" sl="88" sc="1" el="88" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="90" ordinal="4" sl="90" sc="1" el="90" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="91" ordinal="5" sl="91" sc="1" el="91" ec="2" bec="4" bev="2" fileid="4" />
+                <SequencePoint vc="0" uspid="92" ordinal="6" sl="92" sc="1" el="92" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="94" ordinal="7" sl="94" sc="1" el="94" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="4" uspid="96" ordinal="8" sl="96" sc="1" el="96" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="4" uspid="97" ordinal="9" sl="97" sc="1" el="97" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="4" uspid="98" ordinal="10" sl="98" sc="1" el="98" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="5" uspid="100" ordinal="11" sl="100" sc="1" el="100" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="3" uspid="87" ordinal="0" path="0" offset="8" offsetend="10" sl="87" fileid="4" />
+                <BranchPoint vc="2" uspid="87" ordinal="1" path="1" offset="8" offsetend="18" sl="87" fileid="4" />
+                <BranchPoint vc="4" uspid="87" ordinal="2" path="0" offset="21" offsetend="23" sl="87" fileid="4" />
+                <BranchPoint vc="1" uspid="87" ordinal="3" path="1" offset="21" offsetend="29" sl="87" fileid="4" />
+                <BranchPoint vc="1" uspid="91" ordinal="4" path="0" offset="44" offsetend="46" sl="91" fileid="4" />
+                <BranchPoint vc="0" uspid="91" ordinal="5" path="1" offset="44" offsetend="57" sl="91" fileid="4" />
+                <BranchPoint vc="0" uspid="91" ordinal="6" path="0" offset="60" offsetend="62" sl="91" fileid="4" />
+                <BranchPoint vc="1" uspid="91" ordinal="7" path="1" offset="60" offsetend="68" sl="91" fileid="4" />
+              </BranchPoints>
+              <MethodPoint vc="11" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="84" ec="1" el="100" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="4" nPathComplexity="0" sequenceCoverage="66.66" branchCoverage="50" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="9" visitedSequencePoints="6" numBranchPoints="4" visitedBranchPoints="2" sequenceCoverage="66.66" branchCoverage="50" maxCyclomaticComplexity="4" minCyclomaticComplexity="4" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos.CustomerSingleSearchDTO Cds.TestFormationDotnetcore.Infrastructure.CartegieApi::FromResponseToDto(System.Net.Http.HttpResponseMessage)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="232" ordinal="0" sl="232" sc="1" el="232" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="233" ordinal="1" sl="233" sc="1" el="233" ec="2" bec="2" bev="1" fileid="4" />
+                <SequencePoint vc="0" uspid="234" ordinal="2" sl="234" sc="1" el="234" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="236" ordinal="3" sl="236" sc="1" el="236" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="237" ordinal="4" sl="237" sc="1" el="237" ec="2" bec="2" bev="1" fileid="4" />
+                <SequencePoint vc="0" uspid="238" ordinal="5" sl="238" sc="1" el="238" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="239" ordinal="6" sl="239" sc="1" el="239" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="241" ordinal="7" sl="241" sc="1" el="241" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" uspid="242" ordinal="8" sl="242" sc="1" el="242" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="233" ordinal="0" path="0" offset="7" offsetend="9" sl="233" fileid="4" />
+                <BranchPoint vc="2" uspid="233" ordinal="1" path="1" offset="7" offsetend="13" sl="233" fileid="4" />
+                <BranchPoint vc="0" uspid="237" ordinal="2" path="0" offset="36" offsetend="38" sl="237" fileid="4" />
+                <BranchPoint vc="2" uspid="237" ordinal="3" path="1" offset="36" offsetend="43" sl="237" fileid="4" />
+              </BranchPoints>
+              <MethodPoint vc="6" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="232" ec="1" el="242" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void Cds.TestFormationDotnetcore.Infrastructure.CartegieApi::.ctor(Cds.TestFormationDotnetcore.Infrastructure.CartegieConfiguration,System.Net.Http.IHttpClientFactory)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="8" uspid="24" ordinal="0" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="8" uspid="25" ordinal="1" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="8" uspid="26" ordinal="2" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="8" uspid="27" ordinal="3" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="8" uspid="28" ordinal="4" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="5" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="24" ec="1" el="28" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="21" visitedSequencePoints="16" numBranchPoints="6" visitedBranchPoints="4" sequenceCoverage="76.19" branchCoverage="66.66" maxCyclomaticComplexity="6" minCyclomaticComplexity="6" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>Cds.TestFormationDotnetcore.Infrastructure.CartegieApi/&lt;IdSearch&gt;d__6</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="6" nPathComplexity="0" sequenceCoverage="76.19" branchCoverage="66.66" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="21" visitedSequencePoints="16" numBranchPoints="6" visitedBranchPoints="4" sequenceCoverage="76.19" branchCoverage="66.66" maxCyclomaticComplexity="6" minCyclomaticComplexity="6" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void Cds.TestFormationDotnetcore.Infrastructure.CartegieApi/&lt;IdSearch&gt;d__6::MoveNext()</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="111" ordinal="0" sl="111" sc="1" el="111" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="113" ordinal="1" sl="113" sc="1" el="113" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="114" ordinal="2" sl="114" sc="1" el="114" ec="2" bec="2" bev="1" fileid="4" />
+                <SequencePoint vc="0" uspid="115" ordinal="3" sl="115" sc="1" el="115" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="117" ordinal="4" sl="117" sc="1" el="117" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="119" ordinal="5" sl="119" sc="1" el="119" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="121" ordinal="6" sl="121" sc="1" el="121" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="123" ordinal="7" sl="123" sc="1" el="123" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="124" ordinal="8" sl="124" sc="1" el="124" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="126" ordinal="9" sl="126" sc="1" el="126" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="128" ordinal="10" sl="128" sc="1" el="128" ec="2" bec="2" bev="2" fileid="4" />
+                <SequencePoint vc="1" uspid="129" ordinal="11" sl="129" sc="1" el="129" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="130" ordinal="12" sl="130" sc="1" el="130" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="131" ordinal="13" sl="131" sc="1" el="131" ec="2" bec="2" bev="1" fileid="4" />
+                <SequencePoint vc="0" uspid="132" ordinal="14" sl="132" sc="1" el="132" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="133" ordinal="15" sl="133" sc="1" el="133" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="135" ordinal="16" sl="135" sc="1" el="135" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="137" ordinal="17" sl="137" sc="1" el="137" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="138" ordinal="18" sl="138" sc="1" el="138" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="139" ordinal="19" sl="139" sc="1" el="139" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="141" ordinal="20" sl="141" sc="1" el="141" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="114" ordinal="0" path="0" offset="58" offsetend="60" sl="114" fileid="4" />
+                <BranchPoint vc="1" uspid="114" ordinal="1" path="1" offset="58" offsetend="66" sl="114" fileid="4" />
+                <BranchPoint vc="1" uspid="128" ordinal="2" path="0" offset="338" offsetend="340" sl="128" fileid="4" />
+                <BranchPoint vc="0" uspid="131" ordinal="4" path="0" offset="377" offsetend="379" sl="131" fileid="4" />
+                <BranchPoint vc="1" uspid="131" ordinal="5" path="1" offset="377" offsetend="385" sl="131" fileid="4" />
+                <BranchPoint vc="1" uspid="128" ordinal="3" path="1" offset="338" offsetend="386" sl="128" fileid="4" />
+              </BranchPoints>
+              <MethodPoint vc="16" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="111" ec="1" el="141" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="23" visitedSequencePoints="18" numBranchPoints="8" visitedBranchPoints="5" sequenceCoverage="78.26" branchCoverage="62.5" maxCyclomaticComplexity="8" minCyclomaticComplexity="8" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>Cds.TestFormationDotnetcore.Infrastructure.CartegieApi/&lt;SiretSearch&gt;d__7</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="8" nPathComplexity="0" sequenceCoverage="78.26" branchCoverage="62.5" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="23" visitedSequencePoints="18" numBranchPoints="8" visitedBranchPoints="5" sequenceCoverage="78.26" branchCoverage="62.5" maxCyclomaticComplexity="8" minCyclomaticComplexity="8" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void Cds.TestFormationDotnetcore.Infrastructure.CartegieApi/&lt;SiretSearch&gt;d__7::MoveNext()</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="149" ordinal="0" sl="149" sc="1" el="149" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="151" ordinal="1" sl="151" sc="1" el="151" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="152" ordinal="2" sl="152" sc="1" el="152" ec="2" bec="4" bev="2" fileid="4" />
+                <SequencePoint vc="0" uspid="153" ordinal="3" sl="153" sc="1" el="153" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="155" ordinal="4" sl="155" sc="1" el="155" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="157" ordinal="5" sl="157" sc="1" el="157" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="158" ordinal="6" sl="158" sc="1" el="158" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="159" ordinal="7" sl="159" sc="1" el="159" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="161" ordinal="8" sl="161" sc="1" el="161" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="162" ordinal="9" sl="162" sc="1" el="162" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="164" ordinal="10" sl="164" sc="1" el="164" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="166" ordinal="11" sl="166" sc="1" el="166" ec="2" bec="2" bev="2" fileid="4" />
+                <SequencePoint vc="1" uspid="167" ordinal="12" sl="167" sc="1" el="167" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="168" ordinal="13" sl="168" sc="1" el="168" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="169" ordinal="14" sl="169" sc="1" el="169" ec="2" bec="2" bev="1" fileid="4" />
+                <SequencePoint vc="0" uspid="170" ordinal="15" sl="170" sc="1" el="170" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="172" ordinal="16" sl="172" sc="1" el="172" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="173" ordinal="17" sl="173" sc="1" el="173" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="174" ordinal="18" sl="174" sc="1" el="174" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="176" ordinal="19" sl="176" sc="1" el="176" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="177" ordinal="20" sl="177" sc="1" el="177" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="178" ordinal="21" sl="178" sc="1" el="178" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="180" ordinal="22" sl="180" sc="1" el="180" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="152" ordinal="0" path="0" offset="53" offsetend="55" sl="152" fileid="4" />
+                <BranchPoint vc="0" uspid="152" ordinal="1" path="1" offset="53" offsetend="75" sl="152" fileid="4" />
+                <BranchPoint vc="0" uspid="152" ordinal="2" path="0" offset="78" offsetend="80" sl="152" fileid="4" />
+                <BranchPoint vc="1" uspid="152" ordinal="3" path="1" offset="78" offsetend="86" sl="152" fileid="4" />
+                <BranchPoint vc="1" uspid="166" ordinal="4" path="0" offset="370" offsetend="372" sl="166" fileid="4" />
+                <BranchPoint vc="0" uspid="169" ordinal="6" path="0" offset="409" offsetend="411" sl="169" fileid="4" />
+                <BranchPoint vc="1" uspid="169" ordinal="7" path="1" offset="409" offsetend="417" sl="169" fileid="4" />
+                <BranchPoint vc="1" uspid="166" ordinal="5" path="1" offset="370" offsetend="418" sl="166" fileid="4" />
+              </BranchPoints>
+              <MethodPoint vc="18" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="149" ec="1" el="180" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="25" visitedSequencePoints="19" numBranchPoints="8" visitedBranchPoints="5" sequenceCoverage="76" branchCoverage="62.5" maxCyclomaticComplexity="8" minCyclomaticComplexity="8" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>Cds.TestFormationDotnetcore.Infrastructure.CartegieApi/&lt;MultipleSearch&gt;d__8</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="8" nPathComplexity="0" sequenceCoverage="76" branchCoverage="62.5" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="25" visitedSequencePoints="19" numBranchPoints="8" visitedBranchPoints="5" sequenceCoverage="76" branchCoverage="62.5" maxCyclomaticComplexity="8" minCyclomaticComplexity="8" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void Cds.TestFormationDotnetcore.Infrastructure.CartegieApi/&lt;MultipleSearch&gt;d__8::MoveNext()</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="189" ordinal="0" sl="189" sc="1" el="189" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="191" ordinal="1" sl="191" sc="1" el="191" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="192" ordinal="2" sl="192" sc="1" el="192" ec="2" bec="4" bev="2" fileid="4" />
+                <SequencePoint vc="0" uspid="193" ordinal="3" sl="193" sc="1" el="193" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="195" ordinal="4" sl="195" sc="1" el="195" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="197" ordinal="5" sl="197" sc="1" el="197" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="198" ordinal="6" sl="198" sc="1" el="198" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="199" ordinal="7" sl="199" sc="1" el="199" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="201" ordinal="8" sl="201" sc="1" el="201" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="202" ordinal="9" sl="202" sc="1" el="202" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="204" ordinal="10" sl="204" sc="1" el="204" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="206" ordinal="11" sl="206" sc="1" el="206" ec="2" bec="2" bev="2" fileid="4" />
+                <SequencePoint vc="1" uspid="207" ordinal="12" sl="207" sc="1" el="207" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="208" ordinal="13" sl="208" sc="1" el="208" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="209" ordinal="14" sl="209" sc="1" el="209" ec="2" bec="2" bev="1" fileid="4" />
+                <SequencePoint vc="0" uspid="210" ordinal="15" sl="210" sc="1" el="210" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="211" ordinal="16" sl="211" sc="1" el="211" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="213" ordinal="17" sl="213" sc="1" el="213" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="214" ordinal="18" sl="214" sc="1" el="214" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="215" ordinal="19" sl="215" sc="1" el="215" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="217" ordinal="20" sl="217" sc="1" el="217" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="219" ordinal="21" sl="219" sc="1" el="219" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="220" ordinal="22" sl="220" sc="1" el="220" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" uspid="221" ordinal="23" sl="221" sc="1" el="221" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" uspid="223" ordinal="24" sl="223" sc="1" el="223" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" uspid="192" ordinal="0" path="0" offset="53" offsetend="55" sl="192" fileid="4" />
+                <BranchPoint vc="0" uspid="192" ordinal="1" path="1" offset="53" offsetend="68" sl="192" fileid="4" />
+                <BranchPoint vc="0" uspid="192" ordinal="2" path="0" offset="71" offsetend="73" sl="192" fileid="4" />
+                <BranchPoint vc="1" uspid="192" ordinal="3" path="1" offset="71" offsetend="79" sl="192" fileid="4" />
+                <BranchPoint vc="1" uspid="206" ordinal="4" path="0" offset="363" offsetend="365" sl="206" fileid="4" />
+                <BranchPoint vc="0" uspid="209" ordinal="6" path="0" offset="406" offsetend="408" sl="209" fileid="4" />
+                <BranchPoint vc="1" uspid="209" ordinal="7" path="1" offset="406" offsetend="415" sl="209" fileid="4" />
+                <BranchPoint vc="1" uspid="206" ordinal="5" path="1" offset="363" offsetend="440" sl="206" fileid="4" />
+              </BranchPoints>
+              <MethodPoint vc="19" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="189" ec="1" el="223" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="12.5" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="6" />
+          <FullName>Cds.TestFormationDotnetcore.Infrastructure.CartegieConfiguration</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.TestFormationDotnetcore.Infrastructure.CartegieConfiguration::get_BaseUrl()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="11" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="15" ec="1" el="15" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="3" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.TestFormationDotnetcore.Infrastructure.CartegieConfiguration::getBaseUrl()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="22" ordinal="0" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" uspid="23" ordinal="1" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" uspid="24" ordinal="2" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="22" ec="1" el="24" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.TestFormationDotnetcore.Infrastructure.CartegieConfiguration::get_ApiKey()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="29" ordinal="0" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="29" ec="1" el="29" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.TestFormationDotnetcore.Infrastructure.CartegieConfiguration::get_BySiret()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="34" ordinal="0" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="34" ec="1" el="34" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.TestFormationDotnetcore.Infrastructure.CartegieConfiguration::get_ByMultiple()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="39" ec="1" el="39" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String Cds.TestFormationDotnetcore.Infrastructure.CartegieConfiguration::get_ById()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="44" ordinal="0" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="5" offset="5" sc="0" sl="44" ec="1" el="44" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+  </Modules>
+</CoverageSession>

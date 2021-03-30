@@ -50,11 +50,7 @@ namespace Cds.BusinessCustomer.Api.Bootstrap
         {
             services
                 .AddHealthChecks()
-                .AddCheck("Default", () => HealthCheckResult.Healthy("OK"))
-            //.AddSqlServer("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
-            //.AddMongoDb("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
-            // [You can add more checks here...]
-            ;
+                .AddCheck("Default", () => HealthCheckResult.Healthy("OK"));
 
             services
                 // Registers the Swagger generator, defining one Swagger document.
@@ -82,29 +78,7 @@ namespace Cds.BusinessCustomer.Api.Bootstrap
                     // Registers services to generate OpenApi Specifications (via third party library).
                     .AddApiExplorer()
                     // Registers Cdiscount's services to handle field selection, paging, etc.
-                    .AddUnifiedRestApi();          
-
-            // Registers domain handler.
-            //services.AddScoped<ItemHandler>();
-
-            if (_environment.IsDevelopment())
-            {
-                //var inMemoryRepository = new InMemoryRepository();
-                
-                //services
-                //    .AddScoped<IItemRepository>(f => inMemoryRepository)
-                //    .AddScoped<IItemReadRepository>(f => inMemoryRepository);
-            }
-            else
-            {
-                //var connectionString = _configuration.GetConnectionString("DefaultConnection");
-                //services
-                //    .AddSingleton(new MongoDbSettings { ConnectionString = connectionString })
-                //    .AddSingleton<IMongoDbContext, MongoDbContext>()
-                //    .AddSingleton<IMongoClient>(new MongoClient(connectionString))
-                //    .AddSingleton<IItemReadRepository, MongoRepository>();
-            }
-            // [You can add your own application services here...]
+                    .AddUnifiedRestApi();                    
 
             // DI : 
             services
@@ -124,7 +98,6 @@ namespace Cds.BusinessCustomer.Api.Bootstrap
         {
             if (_environment.IsDevelopment())
             {
-                // Uses development tools.
                 application
                     .UseBrowserLink()
                     .UseDeveloperExceptionPage()

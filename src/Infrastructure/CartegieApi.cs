@@ -1,4 +1,5 @@
-﻿using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
+﻿using Cds.BusinessCustomer.Domain.CustomerAggregate;
+using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
 using Newtonsoft.Json;
 using System;
@@ -15,7 +16,8 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
     public class CartegieApi : ICartegieApi
     {
         private readonly IHttpClientFactory _clientFactory;
-        private CartegieConfiguration _configuration;
+        private readonly CartegieConfiguration _configuration;
+
         /// <summary>
         /// Cartagie Api cstr
         /// </summary>
@@ -31,22 +33,22 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Customer info</returns>
-        public Task<CustomerSingleSearchDTO> GetInfosById(string id)
+        public async Task<CustomerSingleSearchDto> GetInfosById(string id)
         {
             try
             {
                 if (string.IsNullOrEmpty(id))
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException(nameof(id));
 
-                CustomerSingleSearchDTO consumerInfo = IdSearch(id).Result;
+                CustomerSingleSearchDto consumerInfo = await IdSearch(id);
                 if (consumerInfo == null)
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException(nameof(id));
                 
-                return Task.FromResult(consumerInfo);
+                return consumerInfo;
             }
             catch (ArgumentNullException)
             {
-                return Task.FromResult<CustomerSingleSearchDTO>(null);
+                return null;
             }
         }
 
@@ -55,22 +57,22 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// </summary>
         /// <param name="siret"></param>
         /// <returns>Customer info</returns>
-        public Task<CustomerSingleSearchDTO> GetInfosBySiret(string siret)
+        public async Task<CustomerSingleSearchDto> GetInfosBySiret(string siret)
         {
             try
             {
-                if (string.IsNullOrEmpty(siret) || siret.Length != 14)
-                    throw new ArgumentNullException();
+                if (string.IsNullOrEmpty(siret) || siret.Length != Constants.SiretRequiredLength)
+                    throw new ArgumentNullException(nameof(siret));
 
-                CustomerSingleSearchDTO consumerInfo = SiretSearch(siret).Result;
+                CustomerSingleSearchDto consumerInfo = await SiretSearch(siret);
                 if (consumerInfo == null)
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException(nameof(siret));
 
-                return Task.FromResult(consumerInfo);
+                return consumerInfo;
             }
             catch (ArgumentNullException)
             {
-                return Task.FromResult<CustomerSingleSearchDTO>(null);
+                return null;
             }
         }
 
@@ -80,22 +82,22 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
             /// <param name="socialReason"></param>
             /// <param name="zipCode"></param>
             /// <returns>Customer info</returns>
-        public Task<List<CustomerMultipleSearchDTO>> GetInfosByCriteria(string socialReason, string zipCode)
+        public async Task<List<CustomerMultipleSearchDto>> GetInfosByCriteria(string socialReason, string zipCode)
         {
             try
             {
                 if (string.IsNullOrEmpty(zipCode) || string.IsNullOrEmpty(socialReason))
                     throw new ArgumentNullException();
 
-                List<CustomerMultipleSearchDTO> list = MultipleSearch(socialReason, zipCode).Result;
+                List<CustomerMultipleSearchDto> list = await MultipleSearch(socialReason, zipCode);
                 if (list == null || list.Count == 0)
                     throw new ArgumentNullException();
                 
-                return Task.FromResult(list);
+                return list;
             }
             catch (ArgumentNullException)
             {
-                return Task.FromResult<List<CustomerMultipleSearchDTO>>(null);
+                return new List<CustomerMultipleSearchDto>();
             }
         }
 
@@ -107,14 +109,14 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        private async Task<CustomerSingleSearchDTO> IdSearch(string id)
+        private async Task<CustomerSingleSearchDto> IdSearch(string id)
         {
             try
             {
                 if (string.IsNullOrEmpty(id))
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException(nameof(id));
 
-                CustomerSingleSearchDTO ConsumerInfo = new CustomerSingleSearchDTO();
+                CustomerSingleSearchDto ConsumerInfo = new CustomerSingleSearchDto();
 
                 var client = _clientFactory.CreateClient();
 
@@ -123,20 +125,20 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage res = await client.GetAsync(_configuration.ById);
+                HttpResponseMessage res = await client.GetAsync(new Uri(_configuration.ById));
 
                 if (res.IsSuccessStatusCode)
                 {
-                    ConsumerInfo = FromResponseToDto(res);
+                    ConsumerInfo = await FromResponseToDto(res);
                     if (ConsumerInfo == null)
-                        throw new ArgumentNullException();
+                        throw new ArgumentNullException(nameof(id));
                 }
 
                 return ConsumerInfo;
             }
             catch (ArgumentNullException)
             {
-                return await Task.FromResult<CustomerSingleSearchDTO>(null);
+                return null;
             }
         }
 
@@ -145,14 +147,14 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// </summary>
         /// <param name="siret"></param>
         /// <returns></returns>
-        private async Task<CustomerSingleSearchDTO> SiretSearch(string siret)
+        private async Task<CustomerSingleSearchDto> SiretSearch(string siret)
         {
             try
             {
-                if (string.IsNullOrEmpty(siret) || siret.Length != 14)
-                    throw new ArgumentNullException();
+                if (string.IsNullOrEmpty(siret) || siret.Length != Constants.SiretRequiredLength)
+                    throw new ArgumentNullException(nameof(siret));
 
-                CustomerSingleSearchDTO ConsumerInfo = new CustomerSingleSearchDTO();
+                CustomerSingleSearchDto ConsumerInfo = new CustomerSingleSearchDto();
 
                 using (var client = _clientFactory.CreateClient())
                 {
@@ -161,13 +163,13 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
                     client.DefaultRequestHeaders.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage res = await client.GetAsync(_configuration.BySiret);
+                    HttpResponseMessage res = await client.GetAsync(new Uri(_configuration.BySiret));
 
                     if (res.IsSuccessStatusCode)
                     {
-                        ConsumerInfo = FromResponseToDto(res);
+                        ConsumerInfo = await FromResponseToDto(res);
                         if (ConsumerInfo == null)
-                            throw new ArgumentNullException();
+                            throw new ArgumentNullException(nameof(siret));
 
                     }
                 }
@@ -175,7 +177,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
             }
             catch (ArgumentNullException)
             {
-                return await Task.FromResult<CustomerSingleSearchDTO>(null);
+                return await Task.FromResult<CustomerSingleSearchDto>(null);
             }
         }
 
@@ -185,14 +187,14 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <param name="socialReason"></param>
         /// <param name="zipcode"></param>
         /// <returns></returns>
-        private async Task<List<CustomerMultipleSearchDTO>> MultipleSearch(string socialReason, string zipcode)
+        private async Task<List<CustomerMultipleSearchDto>> MultipleSearch(string socialReason, string zipcode)
         {
             try
             {
                 if (string.IsNullOrEmpty(zipcode) || string.IsNullOrEmpty(socialReason))
                     throw new ArgumentNullException();
 
-                var consumerInfo = new List<CustomerMultipleSearchDTO>();
+                var consumerInfo = new List<CustomerMultipleSearchDto>();
 
                 using (var client = _clientFactory.CreateClient())
                 {
@@ -201,16 +203,16 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
                     client.DefaultRequestHeaders.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    HttpResponseMessage res = await client.GetAsync(_configuration.ByMultiple);
+                    HttpResponseMessage res = await client.GetAsync(new Uri(_configuration.ByMultiple));
 
                     if (res.IsSuccessStatusCode)
                     {
-                        var EmpResponse = res.Content.ReadAsStringAsync().Result;
+                        var EmpResponse = await res.Content.ReadAsStringAsync();
                         if (EmpResponse == null)
                         {
                             throw new ArgumentNullException();
                         }
-                        consumerInfo = JsonConvert.DeserializeObject<List<CustomerMultipleSearchDTO>>(EmpResponse);
+                        consumerInfo = JsonConvert.DeserializeObject<List<CustomerMultipleSearchDto>>(EmpResponse);
                     }
                 }
 
@@ -218,7 +220,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
             }
             catch (ArgumentNullException)
             {
-                return await Task.FromResult<List<CustomerMultipleSearchDTO>>(null);
+                return await Task.FromResult<List<CustomerMultipleSearchDto>>(null);
             }
         }
 
@@ -228,17 +230,17 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// </summary>
         /// <param name="res"></param>
         /// <returns></returns>
-        private CustomerSingleSearchDTO FromResponseToDto(HttpResponseMessage res)
+        private static async Task<CustomerSingleSearchDto> FromResponseToDto(HttpResponseMessage res)
         {
             if (res == null)
                 return null;
 
-            var EmpResponse = res.Content.ReadAsStringAsync().Result;
+            var EmpResponse = await res.Content.ReadAsStringAsync();
             if (EmpResponse == null)
             {
                 return null;
             }
-            return JsonConvert.DeserializeObject<CustomerSingleSearchDTO>(EmpResponse.Substring(1, EmpResponse.Length - 2));
+            return JsonConvert.DeserializeObject<CustomerSingleSearchDto>(EmpResponse.Substring(1, EmpResponse.Length - 2));
         }
        
     }
