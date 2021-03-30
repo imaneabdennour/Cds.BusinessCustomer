@@ -17,15 +17,15 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
             Table = table;
         }
 
-        public Task<List<CustomerMultipleSearchDTO>> GetInfosByCriteria(string socialReason, string zipCode)
+        public Task<List<CustomerMultipleSearchDto>> GetInfosByCriteria(string socialReason, string zipCode)
         {
             if(Table.Rows.Count == 0)
-                return Task.FromResult<List<CustomerMultipleSearchDTO>>(null);
+                return Task.FromResult<List<CustomerMultipleSearchDto>>(null);
 
-            var tableRead = new List<CustomerMultipleSearchDTO>();
+            var tableRead = new List<CustomerMultipleSearchDto>();
             foreach (var item in Table.Rows)
             {
-                tableRead.Add(new CustomerMultipleSearchDTO
+                tableRead.Add(new CustomerMultipleSearchDto
                 {
                     Name = item["Name"],
                     Adress = item["Adress"],
@@ -36,12 +36,12 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
             return Task.FromResult(tableRead);
         }
 
-        public Task<CustomerSingleSearchDTO> GetInfosById(string id)
+        public Task<CustomerSingleSearchDto> GetInfosById(string id)
         {
             if (Table.Rows.Count == 0)
-                return Task.FromResult<CustomerSingleSearchDTO>(null);
+                return Task.FromResult<CustomerSingleSearchDto>(null);
 
-            return Task.FromResult(new CustomerSingleSearchDTO()
+            return Task.FromResult(new CustomerSingleSearchDto()
             {
                 Name = Table.Rows[0][1],
                 Siret = Table.Rows[1][1],
@@ -55,12 +55,12 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
             });
         }
 
-        public Task<CustomerSingleSearchDTO> GetInfosBySiret(string siret)
+        public Task<CustomerSingleSearchDto> GetInfosBySiret(string siret)
         {
             if (Table.Rows.Count == 0)
-                return Task.FromResult<CustomerSingleSearchDTO>(null);
+                return Task.FromResult<CustomerSingleSearchDto>(null);
 
-            return Task.FromResult(new CustomerSingleSearchDTO()
+            return Task.FromResult(new CustomerSingleSearchDto()
             {
                 Name = Table.Rows[0][1],
                 Siret = Table.Rows[1][1],

@@ -17,20 +17,20 @@ namespace Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions
         /// <param name="socialReason"></param>
         /// <param name="zipCode"></param>
         /// <returns></returns>
-        Task<List<CustomerMultipleSearchDTO>> GetInfosByCriteria(string socialReason, string zipCode);
+        Task<List<CustomerMultipleSearchDto>> GetInfosByCriteria(string socialReason, string zipCode);
 
         /// <summary>
         /// Gets Customer information by criteria : id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<CustomerSingleSearchDTO> GetInfosById(string id);
+        Task<CustomerSingleSearchDto> GetInfosById(string id);
 
         /// <summary>
         /// Gets Customer information by criteria : siret
         /// </summary>
         /// <param name="siret"></param>
         /// <returns></returns>
-        Task<CustomerSingleSearchDTO> GetInfosBySiret(string siret);
+        Task<CustomerSingleSearchDto> GetInfosBySiret(string siret);
     }
 }

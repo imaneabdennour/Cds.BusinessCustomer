@@ -12,16 +12,7 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <summary>
         /// Base url for cartegie api
         /// </summary>
-        public string BaseUrl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public string getBaseUrl()
-        {
-            return BaseUrl;
-        }
+        public Uri BaseUrl { get; set; }
 
         /// <summary>
         /// Cartegie api's key
@@ -31,17 +22,17 @@ namespace Cds.TestFormationDotnetcore.Infrastructure
         /// <summary>
         /// Research by Siret
         /// </summary>
-        public string BySiret { get; set; }
+        public Uri BySiret { get; set; }
 
         /// <summary>
         /// Research by multiple params
         /// </summary>
-        public string ByMultiple { get; set; }
+        public Uri ByMultiple { get; set; }
 
         /// <summary>
         /// Research by Siret
         /// </summary>
-        public string ById { get; set; }
+        public Uri ById { get; set; }
 
 
     }

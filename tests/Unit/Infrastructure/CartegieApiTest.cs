@@ -8,18 +8,19 @@ using System.Threading.Tasks;
 using Xunit;
 using FluentAssertions;
 using System.IO;
+using System;
 
 namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
 {
     public class CartegieApiTest
     {
-        CartegieConfiguration config;
-        Mock<IHttpClientFactory> mockFactory;
+        readonly CartegieConfiguration config;
+        readonly Mock<IHttpClientFactory> mockFactory;
 
         public CartegieApiTest()
         {
             // It's easy to use a real config, instead of mocking it :
-            config = new CartegieConfiguration { BaseUrl = "https://6037a3775435040017722f92.mockapi.io/api/v1/Company/" };
+            config = new CartegieConfiguration { BaseUrl = new Uri("https://6037a3775435040017722f92.mockapi.io/api/v1/Company/")};
             mockFactory = new Mock<IHttpClientFactory>();
         }
         
@@ -135,8 +136,8 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result2 = await cartegieAPi.GetInfosByCriteria("123", "");
 
             //Assert
-            result1.Should().BeNull();
-            result2.Should().BeNull();
+            result1.Should().BeEmpty();
+            result2.Should().BeEmpty();
         }
 
         [Fact]
@@ -152,8 +153,8 @@ namespace Cds.BusinessCustomer.Infrastructure.Tests.Unit
             var result2 = await cartegieAPi.GetInfosByCriteria("", "123");
 
             //Assert
-            result1.Should().BeNull();
-            result2.Should().BeNull();
+            result1.Should().BeEmpty();
+            result2.Should().BeEmpty();
         } 
 
 

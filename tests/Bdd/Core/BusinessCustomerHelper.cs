@@ -78,9 +78,9 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
 
             return tableRead;
         }
-        public static Task<CustomerSingleSearchDTO> GetCustomerDtoFromTable(Table table)
+        public static Task<CustomerSingleSearchDto> GetCustomerDtoFromTable(Table table)
         {
-            return Task.FromResult(new CustomerSingleSearchDTO()
+            return Task.FromResult(new CustomerSingleSearchDto
             {
                 Name = "UBER PARTNER SUPPORT FRANCE SAS",
                 Adress = "Maarif",

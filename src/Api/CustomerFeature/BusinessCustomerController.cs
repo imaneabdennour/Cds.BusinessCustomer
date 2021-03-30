@@ -31,9 +31,9 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
         /// <param name="handler"></param>
         public BusinessCustomerController(ICartegieApi service, ILogger<BusinessCustomerController> logger, IParametersHandler handler)
         {
-            _service = service ?? throw new ArgumentNullException(nameof(service)); ;
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger)); ;
-            _handler = handler ?? throw new ArgumentNullException(nameof(handler)); ;
+            _service = service ?? throw new ArgumentNullException(nameof(service)); 
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger)); 
+            _handler = handler ?? throw new ArgumentNullException(nameof(handler)); 
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                     if (!isValid)
                         throw new BadRequestException("Invalid Siret - should be of length 14");
                     
-                    CustomerSingleSearchDTO response = await _service.GetInfosBySiret(siret);
+                    CustomerSingleSearchDto response = await _service.GetInfosBySiret(siret);
 
                     if (response == null)
                         throw new NotFoundException("There is no business customer with such siret");
@@ -76,9 +76,9 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
                     if (!isValid)
                         throw new BadRequestException("You should enter both SocialReason and ZipCode");
 
-                    List<CustomerMultipleSearchDTO> response = await _service.GetInfosByCriteria(socialReason, zipCode);
+                    List<CustomerMultipleSearchDto> response = await _service.GetInfosByCriteria(socialReason, zipCode);
 
-                    if (response == null)
+                    if (response == null || response.Count == 0)
                         throw new NotFoundException("There is no business customer with such social reason and zipcode");           
 
 
@@ -126,11 +126,10 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
         {
             try
             {
-                CustomerSingleSearchDTO response = await _service.GetInfosById(Id);
+                CustomerSingleSearchDto response = await _service.GetInfosById(Id);
                 if (response == null)
-                {
                     throw new NotFoundException("There is no such business customer with such id");           
-                }
+                
                 return Ok(response.ToViewModel());
             }
             catch(NotFoundException e)
@@ -145,27 +144,5 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature
             }
         }
        
-
-        ///// <summary>
-        ///// Health check for : HTTP
-        ///// </summary>
-        ///// <returns></returns>
-        //[HttpGet("health")]
-        //public async Task<bool> GetHealthCheck()
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri("https://localhost:44383/");
-
-        //        client.DefaultRequestHeaders.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-        //        // status code and data :
-        //        HttpResponseMessage res = await client.GetAsync("healthCheck");
-
-        //        return res.IsSuccessStatusCode;
-        //    }
-        //}
-
     }
 }

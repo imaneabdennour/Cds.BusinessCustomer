@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CustomerAggregate\Exceptions\" />
+    <Compile Remove="CustomerAggregate\Exceptions\**" />
+    <EmbeddedResource Remove="CustomerAggregate\Exceptions\**" />
+    <None Remove="CustomerAggregate\Exceptions\**" />
   </ItemGroup>
 
   <ItemGroup>

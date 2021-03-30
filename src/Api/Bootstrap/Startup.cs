@@ -1,8 +1,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
-
 using Cds.Foundation.Data;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,8 +9,6 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
 using Cds.TestFormationDotnetcore.Infrastructure;
 using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
-using Microsoft.AspNetCore.Mvc;
-using Cds.BusinessCustomer.Infrastructure;
 
 namespace Cds.BusinessCustomer.Api.Bootstrap
 {
@@ -50,11 +46,7 @@ namespace Cds.BusinessCustomer.Api.Bootstrap
         {
             services
                 .AddHealthChecks()
-                .AddCheck("Default", () => HealthCheckResult.Healthy("OK"))
-            //.AddSqlServer("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
-            //.AddMongoDb("DefaultConnection", _configuration.GetConnectionString("DefaultConnection"))
-            // [You can add more checks here...]
-            ;
+                .AddCheck("Default", () => HealthCheckResult.Healthy("OK"));
 
             services
                 // Registers the Swagger generator, defining one Swagger document.
@@ -84,27 +76,7 @@ namespace Cds.BusinessCustomer.Api.Bootstrap
                     // Registers Cdiscount's services to handle field selection, paging, etc.
                     .AddUnifiedRestApi();          
 
-            // Registers domain handler.
-            //services.AddScoped<ItemHandler>();
-
-            if (_environment.IsDevelopment())
-            {
-                //var inMemoryRepository = new InMemoryRepository();
-                
-                //services
-                //    .AddScoped<IItemRepository>(f => inMemoryRepository)
-                //    .AddScoped<IItemReadRepository>(f => inMemoryRepository);
-            }
-            else
-            {
-                //var connectionString = _configuration.GetConnectionString("DefaultConnection");
-                //services
-                //    .AddSingleton(new MongoDbSettings { ConnectionString = connectionString })
-                //    .AddSingleton<IMongoDbContext, MongoDbContext>()
-                //    .AddSingleton<IMongoClient>(new MongoClient(connectionString))
-                //    .AddSingleton<IItemReadRepository, MongoRepository>();
-            }
-            // [You can add your own application services here...]
+                      
 
             // DI : 
             services

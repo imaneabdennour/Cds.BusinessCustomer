@@ -8,8 +8,8 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
 {
     public class ParametersHandlerTest
     {
-        Mock<ILogger<ParametersHandler>> mockLogger;
-        ParametersHandler paramsHandler;
+        readonly Mock<ILogger<ParametersHandler>> mockLogger;
+        readonly ParametersHandler paramsHandler;
 
         public ParametersHandlerTest()
         {

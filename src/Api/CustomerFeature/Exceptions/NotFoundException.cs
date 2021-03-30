@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace Cds.BusinessCustomer.Api.CustomerFeature.Exceptions
@@ -14,20 +15,14 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Exceptions
         /// <summary>
         /// 
         /// </summary>
-        public NotFoundException()
-        {
-
-        }
+        public NotFoundException() : base() { }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="s"></param>
-        public NotFoundException(string s)
-            : base(String.Format(s))
-        {
-
-        }
+        /// <param name="message"></param>
+        public NotFoundException(string message)
+            : base(message) { }
 
         /// <summary>
         /// 
@@ -37,5 +32,13 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Exceptions
         public NotFoundException(string message, Exception innerException)
             : base(message, innerException)
                 { }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="context"></param>
+        protected NotFoundException(SerializationInfo info, StreamingContext context)
+       : base(info, context) { }
     }
 }

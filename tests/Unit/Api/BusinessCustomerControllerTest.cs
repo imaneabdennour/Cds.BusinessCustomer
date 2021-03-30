@@ -81,9 +81,9 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
         }
 
        
-        private Task<CustomerSingleSearchDTO> SingleTask()
+        private Task<CustomerSingleSearchDto> SingleTask()
         {
-            return Task.FromResult(new CustomerSingleSearchDTO()
+            return Task.FromResult(new CustomerSingleSearchDto()
             {
                 Name = "Imane",
                 Adress = "Maarif",
@@ -96,28 +96,23 @@ namespace Cds.BusinessCustomer.Api.Tests.Unit
                 ZipCode = "20100"
             });
         }
-        private Task<List<CustomerMultipleSearchDTO>> MultipleTask()
+        private Task<List<CustomerMultipleSearchDto>> MultipleTask()
         {
-            return Task.FromResult(new List<CustomerMultipleSearchDTO>()
+            return Task.FromResult(new List<CustomerMultipleSearchDto>()
             {
-                new CustomerMultipleSearchDTO {
+                new CustomerMultipleSearchDto {
                     Name = "Imane",
                     Adress = "Maarif",
                     Id = "1254",
                     SocialReason = "rs154"
                 },
-                new CustomerMultipleSearchDTO {
+                new CustomerMultipleSearchDto {
                     Name = "Assia",
                     Adress = "Maarif",
                     Id = "1546",
                     SocialReason = "rs184"
                 }
             });
-        }
-
-        private Task<CustomerSingleSearchDTO> EmptyTask()
-        {
-            return Task.FromResult<CustomerSingleSearchDTO>(null);
         }
 
     }

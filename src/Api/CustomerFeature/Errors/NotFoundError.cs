@@ -16,13 +16,13 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.Errors
         /// <summary>
         /// Constructing a NotFound Error with message
         /// </summary>
-        /// <param name="message"></param>
-        public NotFoundError(string message)
+        /// <param name="msg"></param>
+        public NotFoundError(string msg)
         {
-            Result = new JsonResult(message)
+            Result = new JsonResult(msg)
             {
                 StatusCode = StatusCodes.Status404NotFound,
-                Value = new { message = message }
+                Value = new { message = msg }
             };
         }
     }

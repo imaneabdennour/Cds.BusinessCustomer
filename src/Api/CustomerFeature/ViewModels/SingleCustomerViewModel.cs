@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Cds.BusinessCustomer.Domain.CustomerAggregate;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Cds.BusinessCustomer.Api.CustomerFeature.ViewModels
 {
@@ -12,6 +9,12 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.ViewModels
     /// </summary>
     public class SingleCustomerViewModel
     {
+
+        /// <summary>
+        /// Siret Required Length
+        /// </summary>
+        private const int SiretLength = Constants.SiretRequiredLength;
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -25,7 +28,7 @@ namespace Cds.BusinessCustomer.Api.CustomerFeature.ViewModels
         /// <summary>
         /// Siret
         /// </summary>
-        [MaxLength(14), MinLength(14)]
+        [MaxLength(SiretLength), MinLength(SiretLength)]
         public string Siret { get; set; }
 
         /// <summary>
