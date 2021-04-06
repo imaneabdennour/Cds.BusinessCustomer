@@ -3,7 +3,7 @@
 #
 
 @BusinessCustomerById
-Scenario: Get Business Customer by ID	
+Scenario: Get Business Customer by ID
 	Given a Business Customer with the ID "a40354012" and request to CartegieApi returns :
 		| property      | value                           |
 		| name          | UBER PARTNER SUPPORT FRANCE SAS |

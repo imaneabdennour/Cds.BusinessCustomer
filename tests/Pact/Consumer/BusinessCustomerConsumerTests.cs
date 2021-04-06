@@ -1,79 +1,60 @@
-﻿using System.Collections.Generic;
+﻿using Cds.Foundation.Test;
 using Cds.Foundation.Test.Pact.Consumer;
-using Xunit;
-using System.Threading.Tasks;
-using System.IO;
 using Newtonsoft.Json;
-using Cds.BusinessCustomer.Api.CustomerFeature.ViewModels;
+using PactNet.Matchers;
 using PactNet.Mocks.MockHttpService.Models;
-using Match = PactNet.Matchers.Match;
-using System.Net.Http;
-using Moq;
-using Microsoft.Extensions.Options;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace Cds.BusinessCustomer.Tests.ConsumerPact
 {
     public class BusinessCustomerConsumerTests : BaseConsumerTests<BusinessCustomerConsumer>
     {
-		public BusinessCustomerConsumerTests(BusinessCustomerConsumer consumer) : base(consumer) { }
+        public BusinessCustomerConsumerTests(BusinessCustomerConsumer consumer) : base(consumer) { }
+        [Fact]
+        public async Task BusinessCustomerConsumer_GetId_Return200OKWithInformation()
+        {
+            string customerId = "123456";
+            // Arrange
+            var request = new ProviderServiceRequest
+            {
+                Method = HttpVerb.Get,
+                Path = $"/business-customer-information/{customerId}"
+            };
 
-		[Fact]
-		public async Task GetTenantById_Ok()
-		{			
-			//Arrange
-			string customerId = "a40354012";
-			string path = $"/business-customer-information";
+            var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"../../../Json/get_customer_body_success.json").ConfigureAwait(false));
+            var response = new ProviderServiceResponse
+            {
+                Status = 200,
+                Headers = new Dictionary<string, object>
+                {
+                    { "Content-Type", "application/json; charset=utf-8" }
+                },
+                Body = Match.Type(responseBody)
+            };
 
-			string jsonBody = await File.ReadAllTextAsync(@"../../../Json/get_customer_body.json").ConfigureAwait(false);
-			var body = JsonConvert.DeserializeObject(jsonBody);
-			var tenantBody = JsonConvert.DeserializeObject<SingleCustomerViewModel>(jsonBody);
+            MockProviderService.Given("GetId")
+                .UponReceiving("description")
+                .With(request)
+                .WillRespondWith(response);
 
-			var request = new ProviderServiceRequest
-			{
-				Method = HttpVerb.Get,
-				Path = $"{path}/{customerId}"
-			};
-
-			var response = new ProviderServiceResponse
-			{
-				Status = 200,
-				Headers = new Dictionary<string, object>
-				{
-					{ "Content-Type", "application/json; charset=utf-8" }
-				},
-				Body = Match.Type(body)
-			};
-
-			MockProviderService
-				.UponReceiving("A GET request to retreive business customer details with id")
-				.With(request)
-				.WillRespondWith(response);
-
-            // Create HTTP call 
-            //var httpClient = new HttpClient();
-            //var res = await httpClient.GetAsync($"http://localhost:9222/business-customer-information/{customerId}");
-            //var json = await res.Content.ReadAsStringAsync();
-            //var customerDetails = JsonConvert.DeserializeObject<SingleCustomerViewModel>(json);
-
-            //string e = "UBER PARTNER SUPPORT FRANCE SAS";
-            //Assert.Equal(e, customerDetails.Name);
-
-
-            HttpRequestMessage httpRequest = new HttpRequestMessage(HttpMethod.Get, new Uri(MockProviderServiceBaseUri, path));
-
-            using HttpClient httpClient = new HttpClient();
             // Act
-            HttpResponseMessage httpResponse = await httpClient.SendAsync(httpRequest).ConfigureAwait(false);
+            HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information/{customerId}")).ConfigureAwait(false);
+            // Assert
             object content = JsonConvert.DeserializeObject(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
 
-            // Assert
             Assert.Equal(HttpStatusCode.OK, httpResponse.StatusCode);
+            Assert.Equal(responseBody, content);
 
+            // Generation du pact
             MockProviderService.VerifyInteractions();
 
-
         }
-	}
+    }
 }

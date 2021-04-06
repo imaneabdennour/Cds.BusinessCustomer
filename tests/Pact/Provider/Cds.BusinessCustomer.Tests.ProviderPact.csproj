@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	<TargetFramework>netcoreapp3.1</TargetFramework>
-	<ProjectGuid>{0F9E4946-162D-42C3-A0C5-1DE1617F1813}</ProjectGuid>
-	<IsPackable>false</IsPackable>
-	<RootNamespace>Cds.BusinessCustomer.Tests.ConsumerPact</RootNamespace>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ProjectGuid>{58A44C39-0190-466B-90DD-4A0ECD5374AD}</ProjectGuid>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>Cds.BusinessCustomer.Tests.ProviderPact</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Cds.Foundation.Test" Version="2.0.2" />
     <PackageReference Include="Cds.Foundation.Test.Pact" Version="2.0.2" />
     <PackageReference Include="PactNet.Linux.x64" Version="2.5.3" />
     <PackageReference Include="PactNet.Windows" Version="2.5.3" />
@@ -16,10 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Api\Cds.BusinessCustomer.Api.csproj" />
+    <ProjectReference Include="..\..\..\src\Infrastructure\Cds.BusinessCustomer.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Json\get_customer_body_success.json">
+    <None Update="Json\SuccessResponseById.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

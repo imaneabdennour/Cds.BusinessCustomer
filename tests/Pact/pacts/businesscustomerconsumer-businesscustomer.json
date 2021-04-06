@@ -1,0 +1,43 @@
+{
+  "consumer": {
+    "name": "BusinessCustomerConsumer"
+  },
+  "provider": {
+    "name": "BusinessCustomer"
+  },
+  "interactions": [
+    {
+      "description": "description",
+      "providerState": "GetId",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information/123456"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "name": "UBER PARTNER SUPPORT FRANCE SAS",
+            "siret": "81999478100022",
+            "nafCode": "8299Z",
+            "adress": "",
+            "phone": null,
+            "zipCode": "33000",
+            "city": "UBER PARTNER SUPPORT FRANCE SAS",
+            "socialReason": "UBER PARTNER SUPPORT FRANCE SAS",
+            "civility": null
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "1.0.0"
+    }
+  }
+}

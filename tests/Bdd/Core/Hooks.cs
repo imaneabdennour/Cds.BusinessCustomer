@@ -34,11 +34,10 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
         /// <summary>
         /// before feature method
         /// </summary>
-        [BeforeFeature]
+        [BeforeTestRun]
         public static void BeforeFeature()
         {
             TestCartegieApi = new InMemoryCartegieApi();
-
 
             _host = Program.ConfigureWebHostBuilder(WebHost.CreateDefaultBuilder())
                 .UseEnvironment(Environments.Development)
