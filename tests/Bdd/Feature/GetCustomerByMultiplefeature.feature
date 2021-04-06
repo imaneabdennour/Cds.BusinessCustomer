@@ -2,7 +2,7 @@
 
 @BusinessCustomerByMultiple
 Scenario: Get Business Customer by SocialReason And ZipCode	
-	Given a Business Customer with the socialreason : "123" and zipcode : "456" and request to CartegieApi returns :
+	Given a Business Customer with the socialreason : "a40354012" and zipcode : "456" and request to CartegieApi returns :
 		| Name          | Adress    | Id    | SocialReason |
 		| Electroplanet | Maarif    | 1254  | rs154        |
 		| Jumia         | Derb Omar | 78945 | rs7864       | 

@@ -1,4 +1,5 @@
-﻿using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
+﻿using Cds.BusinessCustomer.Infrastructure;
+using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
 using Cds.BusinessCustomer.Tests.Bdd.Core;
 using FluentAssertions;
 using Moq;
@@ -17,8 +18,8 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
         [Given(@"a Business Customer with the Siret : ""(.*)""  and request to CartegieApi returns :")]
         public void GivenABusinessCustomerWithTheSiretAndRequestToCartegieApiReturns(string siret, Table table)
         {
-            // Mock response from cartegie api = table :
-            new InMemoryCartegieApi(table);
+            CustomerSingleSearchDto res = (new InMemoryCartegieApi()).GetInfosBySiret(siret).Result;
+            Hooks.mockCartegieApi.Setup(service => service.GetInfosBySiret(siret)).ReturnsAsync(res);
         }
 
 

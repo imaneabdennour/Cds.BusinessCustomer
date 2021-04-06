@@ -255,8 +255,8 @@ this.ScenarioInitialize(scenarioInfo);
                             "property",
                             "value"});
 #line 36
-testRunner.Given("a Business Customer with the Siret : \"12345\"  and request to CartegieApi returns " +
-                        ":", ((string)(null)), table9, "Given ");
+testRunner.Given("a Business Customer with the Siret : \"78945612345129\"  and request to CartegieApi" +
+                        " returns :", ((string)(null)), table9, "Given ");
 #line hidden
 #line 38
  testRunner.When("the Business Customer API receives the get request with Siret : \"78945612345129\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

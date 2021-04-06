@@ -1,6 +1,6 @@
 ﻿using Cds.BusinessCustomer.Api.Bootstrap;
+using Cds.BusinessCustomer.Infrastructure;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
-using Cds.TestFormationDotnetcore.Infrastructure;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -30,6 +30,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
         /// </summary>
         public static readonly Uri WebHostUri = new Uri(Constants.HooksBaseIp);
         public static InMemoryCartegieApi TestCartegieApi;
+        public static Mock<ICartegieApi> mockCartegieApi = new Mock<ICartegieApi>(MockBehavior.Strict);
 
         /// <summary>
         /// before feature method
@@ -37,7 +38,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
         [BeforeTestRun]
         public static void BeforeFeature()
         {
-            TestCartegieApi = new InMemoryCartegieApi();
+            //TestCartegieApi = new InMemoryCartegieApi();
 
             _host = Program.ConfigureWebHostBuilder(WebHost.CreateDefaultBuilder())
                 .UseEnvironment(Environments.Development)
@@ -48,7 +49,9 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
                  })
                 .ConfigureTestServices(services =>
                 {
-                    services.AddSingleton<ICartegieApi>(TestCartegieApi);
+                    //services.AddSingleton<ICartegieApi>(TestCartegieApi);
+                    services.AddScoped(ser => mockCartegieApi);
+                    services.AddScoped(ser => mockCartegieApi.Object);
                 })
 
                 .Build();
@@ -58,7 +61,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
         /// <summary>
         /// after test run method
         /// </summary>
-        [AfterFeature]
+        [AfterTestRun]
         public static async Task Afterfeature()
         {
             await _host.StopAsync().ConfigureAwait(false);

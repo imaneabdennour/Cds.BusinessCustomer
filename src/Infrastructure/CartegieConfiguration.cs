@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cds.TestFormationDotnetcore.Infrastructure
+namespace Cds.BusinessCustomer.Infrastructure
 {
     /// <summary>
     /// Configuration POCO

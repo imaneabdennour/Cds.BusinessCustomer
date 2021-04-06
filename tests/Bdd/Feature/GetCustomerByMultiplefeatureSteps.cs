@@ -1,5 +1,9 @@
-﻿using Cds.BusinessCustomer.Tests.Bdd.Core;
+﻿using Cds.BusinessCustomer.Infrastructure;
+using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Dtos;
+using Cds.BusinessCustomer.Tests.Bdd.Core;
 using FluentAssertions;
+using Moq;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -15,7 +19,8 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Feature
         [Given(@"a Business Customer with the socialreason : ""(.*)"" and zipcode : ""(.*)"" and request to CartegieApi returns :")]
         public void GivenABusinessCustomerWithTheSocialreasonAndZipcodeAndRequestToCartegieApiReturns(string socialReason, string zipCode, Table table)
         {
-            new InMemoryCartegieApi(table);
+            var res = (new InMemoryCartegieApi()).GetInfosByCriteria(socialReason, zipCode).Result;
+            Hooks.mockCartegieApi.Setup(service => service.GetInfosByCriteria(socialReason, zipCode)).ReturnsAsync(res);
         }
 
         [When(@"the Business Customer API receives the get request with socialreason : ""(.*)"" and zipcode : ""(.*)""")]

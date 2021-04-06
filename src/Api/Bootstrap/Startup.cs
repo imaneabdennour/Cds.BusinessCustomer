@@ -9,6 +9,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Cds.BusinessCustomer.Infrastructure.CustomerRepository.Abstractions;
 using Cds.TestFormationDotnetcore.Infrastructure;
 using Cds.BusinessCustomer.Api.CustomerFeature.Validation;
+using Cds.BusinessCustomer.Infrastructure;
 
 namespace Cds.BusinessCustomer.Api.Bootstrap
 {

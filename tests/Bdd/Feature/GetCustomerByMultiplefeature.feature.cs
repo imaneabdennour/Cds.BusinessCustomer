@@ -126,8 +126,8 @@ this.ScenarioInitialize(scenarioInfo);
                             "78945",
                             "rs7864"});
 #line 5
- testRunner.Given("a Business Customer with the socialreason : \"123\" and zipcode : \"456\" and request" +
-                        " to CartegieApi returns :", ((string)(null)), table4, "Given ");
+ testRunner.Given("a Business Customer with the socialreason : \"a40354012\" and zipcode : \"456\" and r" +
+                        "equest to CartegieApi returns :", ((string)(null)), table4, "Given ");
 #line hidden
 #line 9
  testRunner.When("the Business Customer API receives the get request with socialreason : \"a40354012" +
