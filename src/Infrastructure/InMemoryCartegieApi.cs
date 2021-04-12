@@ -52,16 +52,14 @@ namespace Cds.BusinessCustomer.Infrastructure
             }
             CustomerSingleSearchDto res = new CustomerSingleSearchDto
             {
-#pragma warning disable S1192 // String literals should not be duplicated
-                Name = "UBER PARTNER SUPPORT FRANCE SAS",
-#pragma warning restore S1192 // String literals should not be duplicated
+                Name = "UBER",
                 Siret = "81999478100022",
                 NafCode = "8299Z",
                 ZipCode = "33000",
-                City = "UBER PARTNER SUPPORT FRANCE SAS",
+                City = "Casablanca",
                 SocialReason = "UBER PARTNER SUPPORT FRANCE SAS",
-                Phone = "+21268085321",
-                Adress = "Maarif",
+                Phone = "+2125456799",
+                Adress = "Hassan Sghir",
                 Civility = "Marocaine"
             };
 

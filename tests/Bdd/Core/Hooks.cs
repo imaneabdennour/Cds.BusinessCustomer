@@ -29,7 +29,7 @@ namespace Cds.BusinessCustomer.Tests.Bdd.Core
         /// The web host Uri.
         /// </summary>
         public static readonly Uri WebHostUri = new Uri(Constants.HooksBaseIp);
-        public static InMemoryCartegieApi TestCartegieApi;
+        //public static InMemoryCartegieApi TestCartegieApi;
         public static Mock<ICartegieApi> mockCartegieApi = new Mock<ICartegieApi>(MockBehavior.Strict);
 
         /// <summary>

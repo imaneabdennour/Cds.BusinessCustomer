@@ -7,6 +7,6 @@ namespace Cds.BusinessCustomer.Tests.ConsumerPact
 {
     public class BusinessCustomerConsumer : BaseConsumer
     {
-        public BusinessCustomerConsumer() : base(new Uri("http://a01pacbro.cdweb.biz/"), "BusinessCustomer", "BusinessCustomerConsumer", "master", false) { }
+        public BusinessCustomerConsumer() : base(new Uri("http://a01pacbro.cdweb.biz/"), "BusinessCustomer", "BusinessCustomerConsumer", "master", true) { }
     }
 }

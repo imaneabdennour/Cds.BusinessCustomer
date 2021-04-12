@@ -75,17 +75,17 @@ namespace Cds.BusinessCustomer.Api.Bootstrap
                     // Registers services to generate OpenApi Specifications (via third party library).
                     .AddApiExplorer()
                     // Registers Cdiscount's services to handle field selection, paging, etc.
-                    .AddUnifiedRestApi();          
+                    .AddUnifiedRestApi();
 
-                      
+
 
             // DI : 
             services
-                .AddScoped<ICartegieApi, CartegieApi>()
-                // Registers api handler.
-                .AddScoped<IParametersHandler, ParametersHandler>()
+                .AddScoped<ICartegieApi, CartegieApi>();
+            // Registers api handler.
+            services.AddScoped<IParametersHandler, ParametersHandler>();
                 // Injection of configuration :
-                .AddSingleton(_configuration.GetSection("CartegieConfiguration").Get<CartegieConfiguration>());
+            services.AddSingleton(_configuration.GetSection("CartegieConfiguration").Get<CartegieConfiguration>());
 
         }
 

@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Cds.Foundation.Test" Version="2.0.2" />
     <PackageReference Include="Cds.Foundation.Test.Pact" Version="2.0.2" />
+    <PackageReference Include="Moq" Version="4.14.0" />
     <PackageReference Include="PactNet.Linux.x64" Version="2.5.3" />
     <PackageReference Include="PactNet.Windows" Version="2.5.3" />
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -23,9 +24,21 @@
 
   <ItemGroup>
     <None Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Json\get_customer_byId_NotFound.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Json\get_customer_byMultiple_NotFound.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Json\get_customer_bySiret_NotFound.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Json\SuccessResponseById.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Json\SuccessResponseByMultiple.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

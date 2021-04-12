@@ -7,11 +7,12 @@
   },
   "interactions": [
     {
-      "description": "description",
-      "providerState": "GetId",
+      "description": "Valid SocialReason and ZipCode",
+      "providerState": "Get business customer information by SocialReason and ZipCode - Success",
       "request": {
         "method": "get",
-        "path": "/business-customer-information/123456"
+        "path": "/business-customer-information",
+        "query": "socialReason=456&zipCode=30000"
       },
       "response": {
         "status": 200,
@@ -20,17 +21,20 @@
         },
         "body": {
           "json_class": "Pact::SomethingLike",
-          "contents": {
-            "name": "UBER PARTNER SUPPORT FRANCE SAS",
-            "siret": "81999478100022",
-            "nafCode": "8299Z",
-            "adress": "",
-            "phone": null,
-            "zipCode": "33000",
-            "city": "UBER PARTNER SUPPORT FRANCE SAS",
-            "socialReason": "UBER PARTNER SUPPORT FRANCE SAS",
-            "civility": null
-          }
+          "contents": [
+            {
+              "id": "1254",
+              "name": "Electroplanet",
+              "adress": "Maarif",
+              "social_reason": "rs154"
+            },
+            {
+              "id": "a38158182",
+              "name": "Jumia",
+              "adress": "Derb Omar",
+              "social_reason": "rs7864"
+            }
+          ]
         }
       }
     }
