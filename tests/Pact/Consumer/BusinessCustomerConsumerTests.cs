@@ -89,7 +89,7 @@ namespace Cds.BusinessCustomer.Tests.ConsumerPact
 
         }
 
-                // Siret
+        // Siret
         [Fact]
         public async Task BusinessCustomerConsumer_GetBySiret_Return200OKWithInformation()
         {
@@ -111,7 +111,7 @@ namespace Cds.BusinessCustomer.Tests.ConsumerPact
                 Headers = new Dictionary<string, object>
                 {
                     { "Content-Type", "application/vnd.restful+json; charset=utf-8" }
-                },               
+                },
                 Body = Match.Type(responseBody)
             };
 
@@ -200,159 +200,159 @@ namespace Cds.BusinessCustomer.Tests.ConsumerPact
             MockProviderService.VerifyInteractions();
         }
 
-                // SocialReason and ZipCode
-        //[Fact]
-        //public async Task BusinessCustomerConsumer_GetBySocialReasonAndZipCode_Return200OKWithInformation()
-        //{
-        //    string socialReason = "456";
-        //    string zipCode = "30000";
-        //    var request = new ProviderServiceRequest
-        //    {
-        //        Method = HttpVerb.Get,
-        //        Path = $"/business-customer-information",
-        //        Query = new Dictionary<string, string>
-        //        {
-        //            { "socialReason", socialReason},
-        //            { "zipCode", zipCode}
-        //        }
-        //    };
+        //SocialReason and ZipCode  
+        [Fact]
+        public async Task BusinessCustomerConsumer_GetBySocialReasonAndZipCode_Return200OKWithInformation()
+        {
+            string socialReason = "456";
+            string zipCode = "30000";
+            var request = new ProviderServiceRequest
+            {
+                Method = HttpVerb.Get,
+                Path = $"/business-customer-information",
+                Query = new Dictionary<string, string>
+                {
+                    { "socialReason", socialReason},
+                    { "zipCode", zipCode}
+                }
+            };
 
-        //    var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"Json/get_customers_body_success.json").ConfigureAwait(false));
-        //    var response = new ProviderServiceResponse
-        //    {
-        //        Status = 200,
-        //        Headers = new Dictionary<string, object>
-        //        {
-        //            { "Content-Type", "application/json; charset=utf-8" }
-        //        },
-        //        Body = Match.Type(responseBody)
-        //    };
+            var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"Json/get_customers_body_success.json").ConfigureAwait(false));
+            var response = new ProviderServiceResponse
+            {
+                Status = 200,
+                Headers = new Dictionary<string, object>
+                {
+                    { "Content-Type", "application/vnd.restful+json; charset=utf-8" }
+                },
+                Body = Match.Type(responseBody)
+            };
 
-        //    MockProviderService.Given("Get business customer information by SocialReason and ZipCode - Success")
-        //        .UponReceiving("Valid SocialReason and ZipCode")
-        //        .With(request)
-        //        .WillRespondWith(response);
+            MockProviderService.Given("Get business customer information by SocialReason and ZipCode - Success")
+                .UponReceiving("Valid SocialReason and ZipCode")
+                .With(request)
+                .WillRespondWith(response);
 
-        //    HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information?socialReason={socialReason}&zipCode={zipCode}")).ConfigureAwait(false);
-        //    object content = JsonConvert.DeserializeObject(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
+            HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information?socialReason={socialReason}&zipCode={zipCode}")).ConfigureAwait(false);
+            object content = JsonConvert.DeserializeObject(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
 
-        //    Assert.Equal(HttpStatusCode.OK, httpResponse.StatusCode);
-        //    Assert.Equal(responseBody, content);
-        //    MockProviderService.VerifyInteractions();
-        //}
+            Assert.Equal(HttpStatusCode.OK, httpResponse.StatusCode);
+            Assert.Equal(responseBody, content);
+            MockProviderService.VerifyInteractions();
+        }
 
-        //[Fact]
-        //public async Task BusinessCustomerConsumer_GetByInvalidSocialReasonAndZipCode_Return400BADREQUESTWithoutInformation()
-        //{
-        //    string socialReason = "";
-        //    string zipCode = "30000";
-        //    var request = new ProviderServiceRequest
-        //    {
-        //        Method = HttpVerb.Get,
-        //        Path = $"/business-customer-information",
-        //        Query = new Dictionary<string, string>
-        //        {
-        //            { "socialReason", socialReason},
-        //            { "zipCode", zipCode}
-        //        }
-        //    };
+        [Fact]
+        public async Task BusinessCustomerConsumer_GetByInvalidSocialReasonAndZipCode_Return400BADREQUESTWithoutInformation()
+        {
+            string socialReason = "";
+            string zipCode = "30000";
+            var request = new ProviderServiceRequest
+            {
+                Method = HttpVerb.Get,
+                Path = $"/business-customer-information",
+                Query = new Dictionary<string, string>
+                {
+                    { "socialReason", socialReason},
+                    { "zipCode", zipCode}
+                }
+            };
 
-        //    var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"Json/get_customer_bySiret_BadRequest.json").ConfigureAwait(false));
-        //    var response = new ProviderServiceResponse
-        //    {
-        //        Status = 400,
-        //        Headers = new Dictionary<string, object>
-        //        {
-        //            { "Content-Type", "application/json; charset=utf-8" }
-        //        },
-        //        Body = Match.Type(responseBody)
-        //    };
+            var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"Json/get_customer_bySiret_BadRequest.json").ConfigureAwait(false));
+            var response = new ProviderServiceResponse
+            {
+                Status = 400,
+                Headers = new Dictionary<string, object>
+                {
+                    { "Content-Type", "application/json; charset=utf-8" }
+                },
+                Body = Match.Type(responseBody)
+            };
 
-        //    MockProviderService.Given("Get business customer information by SocialReason and ZipCode - Bad request(Bad socialreason)")
-        //        .UponReceiving("Invalid SocialReason and valid ZipCode")
-        //        .With(request)
-        //        .WillRespondWith(response);
+            MockProviderService.Given("Get business customer information by SocialReason and ZipCode - Bad request(Bad socialreason)")
+                .UponReceiving("Invalid SocialReason and valid ZipCode")
+                .With(request)
+                .WillRespondWith(response);
 
-        //    HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information?socialReason={socialReason}&zipCode={zipCode}")).ConfigureAwait(false);
+            HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information?socialReason={socialReason}&zipCode={zipCode}")).ConfigureAwait(false);
 
-        //    Assert.Equal(HttpStatusCode.BadRequest, httpResponse.StatusCode);
-        //    MockProviderService.VerifyInteractions();
-        //}
+            Assert.Equal(HttpStatusCode.BadRequest, httpResponse.StatusCode);
+            MockProviderService.VerifyInteractions();
+        }
 
-        //[Fact]
-        //public async Task BusinessCustomerConsumer_GetBySocialReasonAndInvalidZipCode_Return400BADREQUESTWithoutInformation()
-        //{
-        //    string socialReason = "3000";
-        //    string zipCode = "";
-        //    var request = new ProviderServiceRequest
-        //    {
-        //        Method = HttpVerb.Get,
-        //        Path = $"/business-customer-information",
-        //        Query = new Dictionary<string, string>
-        //        {
-        //            { "socialReason", socialReason},
-        //            { "zipCode", zipCode}
-        //        }
-        //    };
+        [Fact]
+        public async Task BusinessCustomerConsumer_GetBySocialReasonAndInvalidZipCode_Return400BADREQUESTWithoutInformation()
+        {
+            string socialReason = "3000";
+            string zipCode = "";
+            var request = new ProviderServiceRequest
+            {
+                Method = HttpVerb.Get,
+                Path = $"/business-customer-information",
+                Query = new Dictionary<string, string>
+                {
+                    { "socialReason", socialReason},
+                    { "zipCode", zipCode}
+                }
+            };
 
-        //    var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"Json/get_customer_bySiret_BadRequest.json").ConfigureAwait(false));
-        //    var response = new ProviderServiceResponse
-        //    {
-        //        Status = 400,
-        //        Headers = new Dictionary<string, object>
-        //        {
-        //            { "Content-Type", "application/json; charset=utf-8" }
-        //        },
-        //        Body = Match.Type(responseBody)
-        //    };
+            var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"Json/get_customer_bySiret_BadRequest.json").ConfigureAwait(false));
+            var response = new ProviderServiceResponse
+            {
+                Status = 400,
+                Headers = new Dictionary<string, object>
+                {
+                    { "Content-Type", "application/json; charset=utf-8" }
+                },
+                Body = Match.Type(responseBody)
+            };
 
-        //    MockProviderService.Given("Get business customer information by SocialReason and ZipCode - Bad request(Bad zipcode)")
-        //        .UponReceiving("Valid SocialReason and invalid ZipCode")
-        //        .With(request)
-        //        .WillRespondWith(response);
+            MockProviderService.Given("Get business customer information by SocialReason and ZipCode - Bad request(Bad zipcode)")
+                .UponReceiving("Valid SocialReason and invalid ZipCode")
+                .With(request)
+                .WillRespondWith(response);
 
-        //    HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information?socialReason={socialReason}&zipCode={zipCode}")).ConfigureAwait(false);
+            HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information?socialReason={socialReason}&zipCode={zipCode}")).ConfigureAwait(false);
 
-        //    Assert.Equal(HttpStatusCode.BadRequest, httpResponse.StatusCode);
-        //    MockProviderService.VerifyInteractions();
-        //}
+            Assert.Equal(HttpStatusCode.BadRequest, httpResponse.StatusCode);
+            MockProviderService.VerifyInteractions();
+        }
 
-        //[Fact]
-        //public async Task BusinessCustomerConsumer_GetByInexistantSocialReasonAndZipCode_Return404NOTFOUNDWithoutInformation()
-        //{
-        //    string socialReason = "1";
-        //    string zipCode = "2";
-        //    var request = new ProviderServiceRequest
-        //    {
-        //        Method = HttpVerb.Get,
-        //        Path = $"/business-customer-information",
-        //        Query = new Dictionary<string, string>
-        //        {
-        //            { "socialReason", socialReason},
-        //            { "zipCode", zipCode}
-        //        }
-        //    };
-        //    var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"Json/get_customer_byId_NotFound.json").ConfigureAwait(false));
-        //    var response = new ProviderServiceResponse
-        //    {
-        //        Status = 404,
-        //        Headers = new Dictionary<string, object>
-        //        {
-        //            { "Content-Type", "application/json; charset=utf-8" }
-        //        },
-        //        Body = Match.Type(responseBody)
-        //    };
-        //    MockProviderService.Given("Get business customer information by SocialReason and ZipCode - Not found")
-        //        .UponReceiving("Not existing SocialReason and ZipCode")
-        //        .With(request)
-        //        .WillRespondWith(response);
+        [Fact]
+        public async Task BusinessCustomerConsumer_GetByInexistantSocialReasonAndZipCode_Return404NOTFOUNDWithoutInformation()
+        {
+            string socialReason = "1";
+            string zipCode = "2";
+            var request = new ProviderServiceRequest
+            {
+                Method = HttpVerb.Get,
+                Path = $"/business-customer-information",
+                Query = new Dictionary<string, string>
+                {
+                    { "socialReason", socialReason},
+                    { "zipCode", zipCode}
+                }
+            };
+            var responseBody = JsonConvert.DeserializeObject(await File.ReadAllTextAsync(@"Json/get_customer_byId_NotFound.json").ConfigureAwait(false));
+            var response = new ProviderServiceResponse
+            {
+                Status = 404,
+                Headers = new Dictionary<string, object>
+                {
+                    { "Content-Type", "application/json; charset=utf-8" }
+                },
+                Body = Match.Type(responseBody)
+            };
+            MockProviderService.Given("Get business customer information by SocialReason and ZipCode - Not found")
+                .UponReceiving("Not existing SocialReason and ZipCode")
+                .With(request)
+                .WillRespondWith(response);
 
-        //    HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information?socialReason={socialReason}&zipCode={zipCode}")).ConfigureAwait(false);
-        //    object content = JsonConvert.DeserializeObject(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
+            HttpResponseMessage httpResponse = await HttpClientHelper.ExecuteGetHttpActionAsync(new Uri(MockProviderServiceBaseUri, $"/business-customer-information?socialReason={socialReason}&zipCode={zipCode}")).ConfigureAwait(false);
+            object content = JsonConvert.DeserializeObject(await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false));
 
-        //    Assert.Equal(HttpStatusCode.NotFound, httpResponse.StatusCode);
-        //    Assert.Equal(responseBody, content);
-        //    MockProviderService.VerifyInteractions();
-        //}
+            Assert.Equal(HttpStatusCode.NotFound, httpResponse.StatusCode);
+            Assert.Equal(responseBody, content);
+            MockProviderService.VerifyInteractions();
+        }
     }
 }

@@ -23,46 +23,32 @@ namespace Cds.BusinessCustomer.Tests.ProviderPact
     /// <summary>
     /// Defines the SellerClientInvoiceWorker provider tests
     /// </summary>
-    public class SellerClientInvoiceWorkerProviderTests : BaseProviderTests<BusinesCustomerProvider>
+    public class BusinessCustomerProviderTests : BaseProviderTests<BusinesCustomerProvider>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SellerClientInvoiceWorkerProviderTests"/> class
         /// </summary>
         /// <param name="output">The Xunit output</param>
         /// <param name="provider">The provider</param>
-        public SellerClientInvoiceWorkerProviderTests(ITestOutputHelper output, BusinesCustomerProvider provider) : base(output, provider)
+        public BusinessCustomerProviderTests(ITestOutputHelper output, BusinesCustomerProvider provider) : base(output, provider)
         {
-            //ProviderStates.Add("Get business customer information by Id - Success", async () => await MockProvidersApiResponse().ConfigureAwait(false));
-            //ProviderStates.Add("Get business customer information by Id - Not found", async () => await MockProvidersApiResponse().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by Id - Success", async () => await MockBusinessCustomerApiResponseByIdSuccess().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by Id - Not found", async () => await MockBusinessCustomerApiResponseByIdNotFound().ConfigureAwait(false));
 
-            //ProviderStates.Add("Get business customer information by Siret - Success", async () => await MockProvidersApiResponse().ConfigureAwait(false));
-            //ProviderStates.Add("Get business customer information by Siret - Not found", async () => await MockProvidersApiResponse().ConfigureAwait(false));
-            //ProviderStates.Add("Get business customer information by Siret - Bad request", async () => await MockProvidersApiResponse().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by Siret - Success", async () => await MockBusinessCustomerApiResponseBySiretSuccess().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by Siret - Not found", async () => await MockBusinessCustomerApiResponseBySiretNotFound().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by Siret - Bad request", async () => await MockBusinessCustomerApiResponseBySiretBadRequest().ConfigureAwait(false));
 
-            ProviderStates.Add("Get business customer information by SocialReason and ZipCode - Success", async () => await MockProvidersApiResponse().ConfigureAwait(false));
-            //ProviderStates.Add("Get business customer information by SocialReason and ZipCode - Not found", async () => await MockProvidersApiResponse().ConfigureAwait(false));
-            //ProviderStates.Add("Get business customer information by SocialReason and ZipCode - Bad request(Bad socialreason)", async () => await MockProvidersApiResponse().ConfigureAwait(false));
-            //ProviderStates.Add("Get business customer information by SocialReason and ZipCode - Bad request(Bad zipcode)", async () => await MockProvidersApiResponse().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by SocialReason and ZipCode - Success", async () => await MockBusinessCustomerApiResponseBySocialReasonAndZipCodeSuccess().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by SocialReason and ZipCode - Not found", async () => await MockBusinessCustomerApiResponseBySocialReasonAndZipCodeNotFound().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by SocialReason and ZipCode - Bad request(Bad socialreason)", async () => await MockBusinessCustomerApiResponseByBadSocialReasonAndZipCodeBadRequest().ConfigureAwait(false));
+            ProviderStates.Add("Get business customer information by SocialReason and ZipCode - Bad request(Bad zipcode)", async () => await MockBusinessCustomerApiResponseBySocialReasonAndBadZipCodeBadRequest().ConfigureAwait(false));
         }
 
 #pragma warning disable S125
         [Fact]
         public Task Provider_SellerClientInvoiceWorker() => EnsureProviderHonoursPactAsync();
-
-        private async Task MockProvidersApiResponse()
-        {
-            await MockBusinessCustomerApiResponseByIdSuccess();
-            await MockBusinessCustomerApiResponseByIdNotFound();
-
-            await MockBusinessCustomerApiResponseBySiretSuccess();
-            MockBusinessCustomerApiResponseBySiretBadRequest();
-            await MockBusinessCustomerApiResponseBySiretNotFound();
-
-            //await MockBusinessCustomerApiResponseBySocialReasonAndZipCodeSuccess();
-            //MockBusinessCustomerApiResponseByBadSocialReasonAndZipCodeBadRequest();
-            //MockBusinessCustomerApiResponseBySocialReasonAndBadZipCodeBadRequest();
-            //await MockBusinessCustomerApiResponseBySocialReasonAndZipCodeNotFound();
-        }
+              
 
                 // Id
         private static async Task MockBusinessCustomerApiResponseByIdSuccess()
@@ -123,7 +109,7 @@ namespace Cds.BusinessCustomer.Tests.ProviderPact
             };
             GlobalServiceHandler.AddResponseMap(httpRequest, httpResponse);
         }
-        private static void MockBusinessCustomerApiResponseBySiretBadRequest()
+        private static async Task MockBusinessCustomerApiResponseBySiretBadRequest()
         {
             var httpRequest = new HttpRequestMessage
             {
@@ -132,7 +118,8 @@ namespace Cds.BusinessCustomer.Tests.ProviderPact
             };
             var httpResponse = new HttpResponseMessage
             {
-                StatusCode = HttpStatusCode.BadRequest
+                StatusCode = HttpStatusCode.BadRequest,
+                Content = new StringContent(await File.ReadAllTextAsync(@"Json/get_customer_bySiret_BadRequest.json").ConfigureAwait(false))
             };
             GlobalServiceHandler.AddResponseMap(httpRequest, httpResponse);
         }
@@ -169,7 +156,7 @@ namespace Cds.BusinessCustomer.Tests.ProviderPact
             };
             GlobalServiceHandler.AddResponseMap(httpRequest, httpResponse);
         }
-        private static void MockBusinessCustomerApiResponseBySocialReasonAndBadZipCodeBadRequest()
+        private static async Task MockBusinessCustomerApiResponseBySocialReasonAndBadZipCodeBadRequest()
         {
             var httpRequest = new HttpRequestMessage
             {
@@ -178,11 +165,12 @@ namespace Cds.BusinessCustomer.Tests.ProviderPact
             };
             var httpResponse = new HttpResponseMessage
             {
-                StatusCode = HttpStatusCode.BadRequest
+                StatusCode = HttpStatusCode.BadRequest,
+                Content = new StringContent(await File.ReadAllTextAsync(@"Json/get_customer_byMultiple_BadRequest.json").ConfigureAwait(false))
             };
             GlobalServiceHandler.AddResponseMap(httpRequest, httpResponse);
         }
-        private static void MockBusinessCustomerApiResponseByBadSocialReasonAndZipCodeBadRequest()
+        private static async Task MockBusinessCustomerApiResponseByBadSocialReasonAndZipCodeBadRequest()
         {
             var httpRequest = new HttpRequestMessage
             {
@@ -191,7 +179,9 @@ namespace Cds.BusinessCustomer.Tests.ProviderPact
             };
             var httpResponse = new HttpResponseMessage
             {
-                StatusCode = HttpStatusCode.BadRequest
+                StatusCode = HttpStatusCode.BadRequest,
+                Content = new StringContent(await File.ReadAllTextAsync(@"Json/get_customer_byMultiple_BadRequest.json").ConfigureAwait(false))
+
             };
             GlobalServiceHandler.AddResponseMap(httpRequest, httpResponse);
         }

@@ -19,7 +19,6 @@ namespace Cds.BusinessCustomer.Tests.ProviderPact {
     {
         public static InMemoryCartegieApi TestCartegieApi;
 
-        //public static Mock<ICartegieApi> mockCartegieApi = new Mock<ICartegieApi>(MockBehavior.Strict);
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinesCustomerProvider"/> class
         /// </summary>
@@ -41,8 +40,6 @@ namespace Cds.BusinessCustomer.Tests.ProviderPact {
                                     .AddHttpMessageHandler(builder => new GlobalServiceHandler())
                                 ;
                                 services.AddSingleton<ICartegieApi>(TestCartegieApi);
-                                //services.AddScoped(ser => mockCartegieApi);
-                                //services.AddScoped(ser => mockCartegieApi.Object);
                             }))
                             .Build();
 

@@ -7,6 +7,76 @@
   },
   "interactions": [
     {
+      "description": "Invalid Siret",
+      "providerState": "Get business customer information by Siret - Bad request",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information",
+        "query": "siret=123"
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "code": "400",
+            "message": "Invalid Siret - should be of length 14"
+          }
+        }
+      }
+    },
+    {
+      "description": "Not existing Id",
+      "providerState": "Get business customer information by Id - Not found",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information/fze486"
+      },
+      "response": {
+        "status": 404,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "message": "There is no such business customer with such id"
+          }
+        }
+      }
+    },
+    {
+      "description": "Valid Id",
+      "providerState": "Get business customer information by Id - Success",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information/123456"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/vnd.restful+json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "name": "UBER",
+            "siret": "81999478100022",
+            "naf_code": "8299Z",
+            "zip_code": "33000",
+            "city": "Casablanca",
+            "social_reason": "UBER PARTNER SUPPORT FRANCE SAS",
+            "phone": "+2125456799",
+            "adress": "Hassan Sghir",
+            "civility": "Marocaine"
+          }
+        }
+      }
+    },
+    {
       "description": "Valid SocialReason and ZipCode",
       "providerState": "Get business customer information by SocialReason and ZipCode - Success",
       "request": {
@@ -17,24 +87,142 @@
       "response": {
         "status": 200,
         "headers": {
+          "Content-Type": "application/vnd.restful+json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "count": 2,
+            "items": [
+              {
+                "id": "a38158182",
+                "name": "SCP DR ABER BOGI CHAU JIME MAURI SIMON",
+                "adress": "108 AVENUE D ARES",
+                "social_reason": "SCP DR ABER BOGI CHAU JIME MAURI SIMON"
+              },
+              {
+                "id": "a38158182",
+                "name": "SCP DR ABER BOGI CHAU JIME MAURI SIMON",
+                "adress": "108 AVENUE D ARES",
+                "social_reason": "SCP DR ABER BOGI CHAU JIME MAURI SIMON"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "description": "Invalid SocialReason and valid ZipCode",
+      "providerState": "Get business customer information by SocialReason and ZipCode - Bad request(Bad socialreason)",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information",
+        "query": "socialReason=&zipCode=30000"
+      },
+      "response": {
+        "status": 400,
+        "headers": {
           "Content-Type": "application/json; charset=utf-8"
         },
         "body": {
           "json_class": "Pact::SomethingLike",
-          "contents": [
-            {
-              "id": "1254",
-              "name": "Electroplanet",
-              "adress": "Maarif",
-              "social_reason": "rs154"
-            },
-            {
-              "id": "a38158182",
-              "name": "Jumia",
-              "adress": "Derb Omar",
-              "social_reason": "rs7864"
-            }
-          ]
+          "contents": {
+            "code": "400",
+            "message": "Invalid Siret - should be of length 14"
+          }
+        }
+      }
+    },
+    {
+      "description": "Valid SocialReason and invalid ZipCode",
+      "providerState": "Get business customer information by SocialReason and ZipCode - Bad request(Bad zipcode)",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information",
+        "query": "socialReason=3000&zipCode="
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "code": "400",
+            "message": "Invalid Siret - should be of length 14"
+          }
+        }
+      }
+    },
+    {
+      "description": "Not existing SocialReason and ZipCode",
+      "providerState": "Get business customer information by SocialReason and ZipCode - Not found",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information",
+        "query": "socialReason=1&zipCode=2"
+      },
+      "response": {
+        "status": 404,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "message": "There is no such business customer with such id"
+          }
+        }
+      }
+    },
+    {
+      "description": "Valid Siret",
+      "providerState": "Get business customer information by Siret - Success",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information",
+        "query": "siret=12345678912345"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/vnd.restful+json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "name": "UBER",
+            "siret": "81999478100022",
+            "naf_code": "8299Z",
+            "zip_code": "33000",
+            "city": "Casablanca",
+            "social_reason": "UBER PARTNER SUPPORT FRANCE SAS",
+            "phone": "+2125456799",
+            "adress": "Hassan Sghir",
+            "civility": "Marocaine"
+          }
+        }
+      }
+    },
+    {
+      "description": "Not existing Siret",
+      "providerState": "Get business customer information by Siret - Not found",
+      "request": {
+        "method": "get",
+        "path": "/business-customer-information",
+        "query": "siret=78945612345129"
+      },
+      "response": {
+        "status": 404,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "json_class": "Pact::SomethingLike",
+          "contents": {
+            "message": "There is no business customer with such siret"
+          }
         }
       }
     }

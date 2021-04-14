@@ -1,14 +1,17 @@
-[
-  {
-    "id": "1254",
-    "name": "Electroplanet",
-    "adress": "Maarif",
-    "social_reason": "rs154"
-  },
-  {
-    "id": "a38158182",
-    "name": "Jumia",
-    "adress": "Derb Omar",
-    "social_reason": "rs7864"
-  }
-]
+{
+  "count": 2,
+  "items": [
+    {
+      "id": "a38158182",
+      "name": "SCP DR ABER BOGI CHAU JIME MAURI SIMON",
+      "adress": "108 AVENUE D ARES",
+      "social_reason": "SCP DR ABER BOGI CHAU JIME MAURI SIMON"
+    },
+    {
+      "id": "a38158182",
+      "name": "SCP DR ABER BOGI CHAU JIME MAURI SIMON",
+      "adress": "108 AVENUE D ARES",
+      "social_reason": "SCP DR ABER BOGI CHAU JIME MAURI SIMON"
+    }
+  ]
+}
